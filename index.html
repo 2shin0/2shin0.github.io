@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 | 이신영</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d3748',
+                        'secondary': '#4a5568',
+                        'accent': '#F7BFA5',
+                        'sub-accent': '#FBE4D6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 스크롤 부드럽게 */
+        html { scroll-behavior: smooth; }
+      
+        /* 이름 하이라이트 애니메이션 */
+        .highlight-accent {
+          position: relative;
+          z-index: 0;
+        }
+        .highlight-accent::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0.1em; /* 글자 기준 약간 위 */
+          height: 40%;
+          width: 0;
+          background-color: #FBE4D6; /* 살구 하이라이트 */
+          z-index: -1; /* 글자 뒤로 */
+          transition: width 900ms ease-in-out;
+        }
+        .highlight-accent.is-on::after {
+          width: 100%;
+        }
+      
+        /* 모션 선호 설정(사용자 보조 기능) */
+        @media (prefers-reduced-motion: reduce) {
+          .highlight-accent::after { transition: none; width: 100%; }
+        }
+      </style>      
+</head>
+<script>
+    // 하이라이트 애니메이션: 로드 후 살짝 지연해서 실행
+    window.addEventListener("DOMContentLoaded", () => {
+      const nameEl = document.querySelector(".highlight-accent");
+      if (nameEl) {
+        setTimeout(() => nameEl.classList.add("is-on"), 250);
+      }
+    });
+  
+    // 모바일 메뉴 토글
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+      // 메뉴 항목 클릭 시 닫기
+      menu.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", () => menu.classList.add("hidden"));
+      });
+    }
+</script>
+  
+<body class="text-gray-800 font-sans" style="background-color: #FAFAFA;">
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-primary">Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="#projects" class="nav-link text-secondary hover:text-primary transition-colors">Projects</a>
+                    <a href="#experience" class="nav-link text-secondary hover:text-primary transition-colors">Experience</a>
+                    <a href="#about" class="nav-link text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="#contact" class="nav-link text-secondary hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-secondary" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white border-t" id="mobile-menu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-secondary hover:text-primary">Home</a>
+                <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
+                <a href="#experience" class="block py-2 text-secondary hover:text-primary">Experience</a>
+                <a href="#about" class="block py-2 text-secondary hover:text-primary">About</a>
+                <a href="#contact" class="block py-2 text-secondary hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/3 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+                        안녕하세요, 
+                        <span class="relative inline-block highlight-accent">이신영</span>
+                        입니다
+                    </h1>
+                    <p class="text-xl text-accent mb-6">문제 해결을 통해 가치를 창출하는 개발자</p>
+                    <p class="text-lg text-secondary mb-8 leading-relaxed">
+                        사용자 중심의 웹 애플리케이션 개발에 열정을 가지고 있으며, 
+                        효율적이고 확장 가능한 솔루션을 만드는 것을 좋아합니다. 
+                        새로운 기술을 배우고 적용하는 것에 즐거움을 느끼며, 
+                        팀과의 협업을 통해 더 나은 결과를 만들어가고 있습니다.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="contents/cv.pdf" class="text-white px-6 py-3 rounded-lg transition-colors flex items-center" style="background-color: #F7BFA5;" onmouseover="this.style.backgroundColor='#E5A689';" onmouseout="this.style.backgroundColor='#F7BFA5';">
+                            <i class="fas fa-download mr-2"></i>
+                            Resume (PDF)
+                        </a>
+                        <a href="https://github.com/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
+                            <i class="fab fa-github mr-2"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            LinkedIn
+                        </a>
+                        <a href="mailto:02.shin.00@gmail.com" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Email
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-64 h-64 overflow-hidden bg-white">
+                        <img
+                          src="contents/profile.jpeg"
+                          alt="프로필 사진"
+                          class="w-full h-full object-contain" />
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">주요 프로젝트</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">프로젝트 제목 1</h3>
+                        <p class="text-secondary mb-4">프로젝트에 대한 간단한 설명입니다. 주요 기능과 목적을 설명합니다.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2">
+                                <strong>역할:</strong> 풀스택 개발자
+                            </p>
+                            <p class="text-sm text-accent mb-2">
+                                <strong>성과:</strong> 처리 속도 30% 개선, 사용자 만족도 95%
+                            </p>
+                            <p class="text-sm text-accent">
+                                <strong>기술 스택:</strong> React, Node.js, MongoDB
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">프로젝트 제목 2</h3>
+                        <p class="text-secondary mb-4">프로젝트에 대한 간단한 설명입니다. 주요 기능과 목적을 설명합니다.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2">
+                                <strong>역할:</strong> 프론트엔드 개발자
+                            </p>
+                            <p class="text-sm text-accent mb-2">
+                                <strong>성과:</strong> 로딩 시간 50% 단축, 모바일 최적화 완료
+                            </p>
+                            <p class="text-sm text-accent">
+                                <strong>기술 스택:</strong> Vue.js, TypeScript, AWS
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">프로젝트 제목 3</h3>
+                        <p class="text-secondary mb-4">프로젝트에 대한 간단한 설명입니다. 주요 기능과 목적을 설명합니다.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2">
+                                <strong>역할:</strong> 백엔드 개발자
+                            </p>
+                            <p class="text-sm text-accent mb-2">
+                                <strong>성과:</strong> API 응답 시간 40% 개선, 동시 접속자 1000명 처리
+                            </p>
+                            <p class="text-sm text-accent">
+                                <strong>기술 스택:</strong> Python, Django, PostgreSQL
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">이력 및 경력</h2>
+            
+            <!-- Education & Career -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-primary mb-6">학력 및 경력</h3>
+                <div class="space-y-6">
+                    <div class="flex flex-col md:flex-row md:items-center border-l-4 border-primary pl-6">
+                        <div class="md:w-1/4 mb-2 md:mb-0">
+                            <span class="text-accent font-medium">2019 - 2024</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="text-lg font-semibold text-primary">교육공학과 학사</h4>
+                            <p class="text-secondary">이화여자대학교</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center border-l-4 border-primary pl-6">
+                        <div class="md:w-1/4 mb-2 md:mb-0">
+                            <span class="text-accent font-medium">2024.6 - 2025.9</span>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h4 class="text-lg font-semibold text-primary">AI Research Engineer</h4>
+                            <p class="text-secondary">천재교육 디지털러닝부문 디지털교육팀</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold text-primary mb-6">기술 스택</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fab fa-js-square text-4xl text-yellow-500 mb-2"></i>
+                        <span class="text-sm text-secondary">JavaScript</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fab fa-react text-4xl text-blue-500 mb-2"></i>
+                        <span class="text-sm text-secondary">React</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fab fa-node-js text-4xl text-green-500 mb-2"></i>
+                        <span class="text-sm text-secondary">Node.js</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fab fa-python text-4xl text-blue-600 mb-2"></i>
+                        <span class="text-sm text-secondary">Python</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fab fa-aws text-4xl text-orange-500 mb-2"></i>
+                        <span class="text-sm text-secondary">AWS</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fas fa-database text-4xl text-gray-600 mb-2"></i>
+                        <span class="text-sm text-secondary">Database</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div>
+                <h3 class="text-2xl font-semibold text-primary mb-6">인증 및 수상</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-primary mb-2">빅데이터분석기사</h4>
+                        <p class="text-secondary">한국산업인력공단 · 2025</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-primary mb-2">해커톤 대상</h4>
+                        <p class="text-secondary">OO 대학교 · 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16" style="background-color: #f9efe9;">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-primary mb-8">About Me</h2>
+            <div class="text-lg text-secondary leading-relaxed space-y-4">
+                <p>
+                    저는 사용자의 문제를 해결하고 더 나은 경험을 제공하는 것에 관심이 많습니다. 
+                    특히 웹 애플리케이션 개발을 통해 복잡한 문제를 단순하고 직관적인 솔루션으로 만드는 것을 좋아합니다.
+                </p>
+                <p>
+                    새로운 기술을 배우고 적용하는 것에 즐거움을 느끼며, 항상 더 효율적이고 확장 가능한 코드를 작성하기 위해 노력합니다. 
+                    팀워크를 중시하며, 동료들과의 협업을 통해 서로 성장할 수 있는 환경을 만들어가고 있습니다.
+                </p>
+                <p>
+                    앞으로는 풀스택 개발자로서 더욱 성장하여, 사용자 중심의 혁신적인 서비스를 만드는 데 기여하고 싶습니다. 
+                    특히 AI와 웹 기술의 융합 분야에서 새로운 가능성을 탐구하고 있습니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-primary mb-8">연락처</h2>
+            <p class="text-lg text-secondary mb-12">
+                새로운 기회나 협업에 관심이 있으시면 언제든 연락주세요.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: #F7BFA5;">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">이메일</h3>
+                    <a href="mailto:your.email@example.com" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
+                        your.email@example.com
+                    </a>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: #F7BFA5;">
+                        <i class="fab fa-github text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">GitHub</h3>
+                    <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
+                        github.com/yourusername
+                    </a>
+                </div>
+                
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-4" style="background-color: #F7BFA5;">
+                        <i class="fab fa-linkedin text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-primary mb-2">LinkedIn</h3>
+                    <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
+                        linkedin.com/in/yourprofile
+                    </a>
+                </div>
+            </div>
+
+            <!-- QR Code -->
+            <div class="flex justify-center">
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <div class="w-32 h-32 bg-gray-200 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-qrcode text-4xl text-gray-400"></i>
+                    </div>
+                    <p class="text-sm text-accent">이력서 QR 코드</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-8" style="background-color: #2d3748;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Shin Young Lee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
