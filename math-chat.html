@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성형 AI를 활용한 중등 수학 개념 및 풀이 챗봇 | 이신영</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d3748',
+                        'secondary': '#4a5568',
+                        'accent': '#F7BFA5',
+                        'sub-accent': '#FBE4D6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .highlight-accent {
+            background: linear-gradient(120deg, #FBE4D6 0%, #FBE4D6 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 font-sans" style="background-color: #FAFAFA;">
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-primary">
+                    <a href="index.html">Portfolio</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="nav-link text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="index.html#projects" class="nav-link text-secondary hover:text-primary transition-colors">Projects</a>
+                    <a href="index.html#experience" class="nav-link text-secondary hover:text-primary transition-colors">Experience</a>
+                    <a href="index.html#about" class="nav-link text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="index.html#contact" class="nav-link text-secondary hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-secondary" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-400 to-teal-500 rounded-full mb-6">
+                    <i class="fas fa-calculator text-3xl text-white"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+                    생성형 AI를 활용한 <span class="highlight-accent">중등 수학</span> 개념 및 풀이 챗봇
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    RAG 기술을 활용하여 중학교 1학년 수학 개념과 문제 풀이를 단계별로 제공하는 AI 챗봇입니다.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://github.com/2shin0/math-chat" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="background-color: #F7BFA5; color: white;" onmouseover="this.style.backgroundColor='#E5A689';" onmouseout="this.style.backgroundColor='#F7BFA5';">
+                        <i class="fab fa-github mr-2"></i>
+                        GitHub 보기
+                    </a>
+                    <span class="px-6 py-3 rounded-lg" style="border: 2px solid #F7BFA5; color: #F7BFA5;">
+                        <i class="fas fa-calendar mr-2"></i>
+                        2024.11.7 ~ 11.14
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">프로젝트 개요</h2>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        KDT 개발 멘토로 참여한 결과물로, PDF 형태의 수학 교재를 벡터 데이터베이스에 저장하고, 학생의 질문에 맞는 관련 내용을 검색하여 GPT-4를 통해 친근하고 이해하기 쉬운 설명을 제공합니다.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-accent mr-3"></i>
+                            <span><strong>기획팀:</strong> PM 7기 김민정, 김지민, 김화영, 유영채, 윤수정</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-code text-accent mr-3"></i>
+                            <span><strong>개발 멘토:</strong> 김현경, 이신영, 이효준</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-user-tie text-accent mr-3"></i>
+                            <span><strong>역할:</strong> 개발 멘토</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4">주요 특징</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>RAG 기반 PDF 교재 문서 검색</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>단계별 수학 풀이 제공</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>중학교 1학년 수준 맞춤 설명</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>웹 기반 실시간 채팅 인터페이스</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">기획 및 개발 발표자료</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/d5b211fc-391a-4489-b606-770729b453da" alt="기획 발표자료 1" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">프로젝트 개요</h3>
+                    <p class="text-secondary">RAG 기반 수학 학습 챗봇 기획</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/329fbb80-a861-4981-bbdd-0ecd9300baeb" alt="기획 발표자료 2" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">시스템 구조</h3>
+                    <p class="text-secondary">RAG 아키텍처 및 기술 스택</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/63830cfc-46b5-44e1-89be-0dc52c782f9f" alt="개발 발표자료 1" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">개발 결과</h3>
+                    <p class="text-secondary">구현된 기능 및 성과</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/63370a05-fd85-420b-a822-4515a2155044" alt="개발 발표자료 2" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">기술적 구현</h3>
+                    <p class="text-secondary">RAG 3단계 전략 구현</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">기술 스택</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-server text-accent mr-3"></i>
+                        Backend
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• Flask (Python)</li>
+                        <li>• OpenAI GPT-4o</li>
+                        <li>• LangChain</li>
+                        <li>• FAISS (벡터 데이터베이스)</li>
+                        <li>• OpenAI Embeddings</li>
+                        <li>• PyPDF2, PyPDF (문서 처리)</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-laptop-code text-accent mr-3"></i>
+                        Frontend & Tools
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• Flask Jinja2 (템플릿 엔진)</li>
+                        <li>• CSS (스타일링)</li>
+                        <li>• JavaScript</li>
+                        <li>• Python 3.10.0</li>
+                        <li>• VSCode, venv</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">주요 기능</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-search text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">RAG 기반 문서 검색</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• PDF 교재를 청킹하여 벡터 DB에 저장</li>
+                        <li>• MMR 방식으로 관련 문서 내용 검색</li>
+                        <li>• 검색된 문서 기반 정확한 답변 생성</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-list-ol text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">단계별 수학 풀이</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• RAG 3단계 전략 대응 GPT 단계별 풀이</li>
+                        <li>• 중학교 1학년 수준 친근한 말투</li>
+                        <li>• 복잡한 개념을 단계별로 나누어 설명</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">적응형 학습 지원</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 추가 설명 요청 시 재설명 제공</li>
+                        <li>• 학생 수준에 맞는 용어 사용</li>
+                        <li>• 존댓말과 친근한 "~에요" 말투</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-comments text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">웹 기반 채팅 인터페이스</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 실시간 채팅 형태의 질의응답</li>
+                        <li>• 직관적이고 사용하기 쉬운 인터페이스</li>
+                        <li>• 대화 기록 유지 및 연속적 학습 지원</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">시스템 아키텍처</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <pre class="text-sm text-secondary overflow-x-auto">
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Web Browser   │    │   Flask Server  │    │   OpenAI API    │
+│   (Frontend)    │◄──►│   (Backend)     │◄──►│   (GPT-4o)      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │
+                       ┌────────┼────────┐
+                       │        │        │
+              ┌─────────▼──┐ ┌──▼──────┐ ┌───▼────────┐
+              │    PDF     │ │  FAISS  │ │  LangChain │
+              │ Documents  │ │ Vector  │ │   Chain    │
+              │            │ │   DB    │ │            │
+              └────────────┘ └─────────┘ └────────────┘
+                </pre>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">데이터 처리 파이프라인</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• PyPDFDirectoryLoader를 통한 PDF 문서 일괄 로딩</li>
+                        <li>• RecursiveCharacterTextSplitter로 청크 분할</li>
+                        <li>• OpenAI Embeddings를 통한 텍스트 벡터화</li>
+                        <li>• FAISS 벡터 데이터베이스에 코사인 유사도 기반 저장</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">AI 알고리즘</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• MMR 방식으로 관련 문서 검색</li>
+                        <li>• Map-Reduce 체인을 통한 답변 생성</li>
+                        <li>• 중학교 1학년 수준 프롬프트 엔지니어링</li>
+                        <li>• 검색된 문서들을 결합한 일관성 있는 답변</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role and Contribution -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">역할 및 기여</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-chalkboard-teacher text-accent mr-3"></i>
+                        개발 멘토 역할
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 시스템 설계: RAG 아키텍처 설계 및 구현 가이드</li>
+                        <li>• 기술 지도: LangChain, FAISS, OpenAI API 활용 멘토링</li>
+                        <li>• 코드 리뷰: 효율적인 벡터 검색 및 답변 생성 로직 개선</li>
+                        <li>• 성능 최적화: 청킹 전략 및 검색 파라미터 튜닝</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-code text-accent mr-3"></i>
+                        주요 기여 영역
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• RAG 3단계 전략 구현 및 최적화</li>
+                        <li>• 교육용 프롬프트 엔지니어링</li>
+                        <li>• 벡터 데이터베이스 구축 및 관리</li>
+                        <li>• 웹 인터페이스 개발 지원</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Projects -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="index.html#projects" class="inline-flex items-center px-6 py-3 rounded-lg transition-colors" style="background-color: #F7BFA5; color: white;" onmouseover="this.style.backgroundColor='#E5A689';" onmouseout="this.style.backgroundColor='#F7BFA5';">
+                <i class="fas fa-arrow-left mr-2"></i>
+                다른 프로젝트 보기
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-8" style="background-color: #2d3748;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Shin Young Lee. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -156,91 +156,136 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-primary mb-12 text-center">주요 프로젝트</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                <!-- 캐미 - AI 기반 인터랙티브 스토리텔링 캐릭터챗봇 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='characterchat.html'">
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/chami-thumbnail.jpg" alt="캐미 프로젝트 스크린샷" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">프로젝트 제목 1</h3>
-                        <p class="text-secondary mb-4">프로젝트에 대한 간단한 설명입니다. 주요 기능과 목적을 설명합니다.</p>
+                        <h3 class="text-xl font-semibold text-primary mb-2">캐미 - AI 캐릭터챗봇</h3>
+                        <p class="text-secondary mb-4">AI 기반 인터랙티브 스토리텔링 플랫폼. 사용자 맞춤형 캐릭터 생성과 동적 세계관 구축을 통한 몰입감 있는 대화 경험을 제공합니다.</p>
                         <div class="mb-4">
                             <p class="text-sm text-accent mb-2">
-                                <strong>역할:</strong> 풀스택 개발자
+                                <strong>역할:</strong> 기획 및 개발
                             </p>
                             <p class="text-sm text-accent mb-2">
-                                <strong>성과:</strong> 처리 속도 30% 개선, 사용자 만족도 95%
+                                <strong>성과:</strong> OpenAI GPT-4, DALL-E 3 통합
                             </p>
                             <p class="text-sm text-accent">
-                                <strong>기술 스택:</strong> React, Node.js, MongoDB
+                                <strong>기술 스택:</strong> React, FastAPI, PostgreSQL
                             </p>
                         </div>
                         <div class="flex gap-2">
-                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                            <a href="https://github.com/2shin0/character-chat" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" onclick="event.stopPropagation();">
                                 <i class="fab fa-github mr-1"></i>GitHub
-                            </a>
-                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                <!-- 지니 - AI 수능 국어 지문/문항 자동 생성 서비스 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='genie.html'">
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/genie-thumbnail.png" alt="지니 프로젝트 스크린샷" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">프로젝트 제목 2</h3>
-                        <p class="text-secondary mb-4">프로젝트에 대한 간단한 설명입니다. 주요 기능과 목적을 설명합니다.</p>
+                        <h3 class="text-xl font-semibold text-primary mb-2">지니 - AI 국어 문항 생성</h3>
+                        <p class="text-secondary mb-4">Google Gemini AI를 활용한 수능 국어 지문 및 문항 자동 생성 플랫폼. 교육 현장의 문제 출제 업무를 효율화합니다.</p>
                         <div class="mb-4">
                             <p class="text-sm text-accent mb-2">
-                                <strong>역할:</strong> 프론트엔드 개발자
+                                <strong>역할:</strong> 기획 및 API 개발
                             </p>
                             <p class="text-sm text-accent mb-2">
-                                <strong>성과:</strong> 로딩 시간 50% 단축, 모바일 최적화 완료
+                                <strong>성과:</strong> Google Gemini 2.5 Pro 통합
                             </p>
                             <p class="text-sm text-accent">
-                                <strong>기술 스택:</strong> Vue.js, TypeScript, AWS
+                                <strong>기술 스택:</strong> Vue.js, Spring Boot, FastAPI
                             </p>
                         </div>
                         <div class="flex gap-2">
-                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                            <a href="https://github.com/2shin0/genie" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" onclick="event.stopPropagation();">
                                 <i class="fab fa-github mr-1"></i>GitHub
-                            </a>
-                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-image text-4xl text-gray-400"></i>
+                <!-- 수학 챗봇 - 생성형 AI를 활용한 중등 수학 개념 및 풀이 챗봇 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='math-chat.html'">
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/mathchat-thumbnail.jpg" alt="수학 챗봇 프로젝트 스크린샷" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">프로젝트 제목 3</h3>
-                        <p class="text-secondary mb-4">프로젝트에 대한 간단한 설명입니다. 주요 기능과 목적을 설명합니다.</p>
+                        <h3 class="text-xl font-semibold text-primary mb-2">수학 챗봇 - AI 수학 학습</h3>
+                        <p class="text-secondary mb-4">RAG 기술을 활용한 중학교 수학 개념 및 문제 풀이 챗봇. 단계별 풀이와 친근한 설명을 제공합니다.</p>
                         <div class="mb-4">
                             <p class="text-sm text-accent mb-2">
-                                <strong>역할:</strong> 백엔드 개발자
+                                <strong>역할:</strong> 개발 멘토
                             </p>
                             <p class="text-sm text-accent mb-2">
-                                <strong>성과:</strong> API 응답 시간 40% 개선, 동시 접속자 1000명 처리
+                                <strong>성과:</strong> RAG 3단계 전략 구현
                             </p>
                             <p class="text-sm text-accent">
-                                <strong>기술 스택:</strong> Python, Django, PostgreSQL
+                                <strong>기술 스택:</strong> Flask, OpenAI GPT-4, FAISS
                             </p>
                         </div>
                         <div class="flex gap-2">
-                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
+                            <a href="https://github.com/2shin0/math-chat" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" onclick="event.stopPropagation();">
                                 <i class="fab fa-github mr-1"></i>GitHub
                             </a>
-                            <a href="#" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" transition-colors">
-                                <i class="fas fa-external-link-alt mr-1"></i>Demo
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 코스매쓰 - AI 수학 교육 플랫폼 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='math-courseware.html'">
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/coursemath-thumbnail.png" alt="코스매쓰 프로젝트 스크린샷" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">코스매쓰 - AI 수학 교육</h3>
+                        <p class="text-secondary mb-4">KSM과 IRT 이론 기반 초등수학 AI 코스웨어. 적응형 평가와 시각적 지식맵을 통한 개인화된 학습 경험을 제공합니다.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2">
+                                <strong>역할:</strong> 개발
+                            </p>
+                            <p class="text-sm text-accent mb-2">
+                                <strong>성과:</strong> 적응형 평가 시스템 구현
+                            </p>
+                            <p class="text-sm text-accent">
+                                <strong>기술 스택:</strong> React, TypeScript, Material-UI
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/2shin0/math-courseware" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" onclick="event.stopPropagation();">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HAMO - 사회정서학습을 위한 인터랙티브 스토리텔링 챗봇 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer" onclick="window.location.href='sel-chat.html'">
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/hamo-thumbnail.jpg" alt="HAMO 프로젝트 스크린샷" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary mb-2">HAMO - 사회정서학습</h3>
+                        <p class="text-secondary mb-4">중학생 대상 감정 교육 및 사회성 발달을 위한 인터랙티브 스토리텔링 플랫폼. AI 챗봇을 통한 개인화된 상담을 제공합니다.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2">
+                                <strong>역할:</strong> 기획 멘토링 및 개발
+                            </p>
+                            <p class="text-sm text-accent mb-2">
+                                <strong>성과:</strong> 인터랙티브 스토리텔링 구현
+                            </p>
+                            <p class="text-sm text-accent">
+                                <strong>기술 스택:</strong> React, Express, OpenAI GPT-4
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/2shin0/sel-chat" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';" onclick="event.stopPropagation();">
+                                <i class="fab fa-github mr-1"></i>GitHub
                             </a>
                         </div>
                     </div>

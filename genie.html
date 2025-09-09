@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지니 - AI 수능 국어 지문/문항 자동 생성 서비스 | 이신영</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d3748',
+                        'secondary': '#4a5568',
+                        'accent': '#F7BFA5',
+                        'sub-accent': '#FBE4D6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .highlight-accent {
+            background: linear-gradient(120deg, #FBE4D6 0%, #FBE4D6 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 font-sans" style="background-color: #FAFAFA;">
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-primary">
+                    <a href="index.html">Portfolio</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="nav-link text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="index.html#projects" class="nav-link text-secondary hover:text-primary transition-colors">Projects</a>
+                    <a href="index.html#experience" class="nav-link text-secondary hover:text-primary transition-colors">Experience</a>
+                    <a href="index.html#about" class="nav-link text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="index.html#contact" class="nav-link text-secondary hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-secondary" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full mb-6">
+                    <i class="fas fa-book-open text-3xl text-white"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+                    <span class="highlight-accent">지니</span> - AI 수능 국어 지문/문항 자동 생성 서비스
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    교육 현장의 문제 출제 업무 경감을 위해 개발된 AI 수능 국어 지문 및 문항 자동 생성 플랫폼입니다.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://github.com/2shin0/genie" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="background-color: #F7BFA5; color: white;" onmouseover="this.style.backgroundColor='#E5A689';" onmouseout="this.style.backgroundColor='#F7BFA5';">
+                        <i class="fab fa-github mr-2"></i>
+                        GitHub 보기
+                    </a>
+                    <span class="px-6 py-3 rounded-lg" style="border: 2px solid #F7BFA5; color: #F7BFA5;">
+                        <i class="fas fa-calendar mr-2"></i>
+                        2025.02 ~ 07
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">프로젝트 개요</h2>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        지니는 Google Gemini AI를 활용하여 다양한 유형의 지문(단일 지문, 독서론, 복합 지문)과 그에 맞는 문항을 자동으로 생성하며, 교육자들이 효율적으로 평가 자료를 제작할 수 있도록 지원합니다.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-accent mr-3"></i>
+                            <span><strong>팀원:</strong> 손명근(기획), 이신영, 이효준, 권홍준, 정도환, 김현경, 최광훈</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-user-tie text-accent mr-3"></i>
+                            <span><strong>역할:</strong> 기획 및 API 개발</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4">주요 특징</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>Google Gemini 2.5 Pro/Flash를 활용한 지문 생성</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>단일/독서론/복합 지문 다양한 유형 지원</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>지문 분석 기반 적합한 문항 자동 생성</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>TipTap 에디터를 통한 실시간 콘텐츠 편집</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">서비스 화면</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/10ce053a-e157-430c-a106-d9afea584fe0" alt="지문 생성 화면" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">지문 생성 인터페이스</h3>
+                    <p class="text-secondary">단일/독서론/복합 지문 생성 선택</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/d84b34a6-ce90-4166-ba7e-16ac5a8dd1c9" alt="문항 생성 화면" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">문항 생성 화면</h3>
+                    <p class="text-secondary">지문 기반 다양한 유형의 문항 생성</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/973d360f-b777-489d-b712-36643546b419" alt="에디터 화면" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">TipTap 에디터</h3>
+                    <p class="text-secondary">실시간 콘텐츠 편집 도구</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/669ac75b-4804-43ca-a11f-c8e32df96fcf" alt="저장소 화면" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">콘텐츠 저장소</h3>
+                    <p class="text-secondary">생성된 콘텐츠 관리 및 재사용</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">기술 스택</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-laptop-code text-accent mr-3"></i>
+                        Frontend
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• Vue 3 + Composition API</li>
+                        <li>• Pinia (상태 관리)</li>
+                        <li>• Tailwind CSS, TW Elements</li>
+                        <li>• TipTap (텍스트 에디터)</li>
+                        <li>• Vue Router 4, Vite</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-server text-accent mr-3"></i>
+                        Backend
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• Spring Boot 3.4.3</li>
+                        <li>• Spring Security, OAuth2</li>
+                        <li>• MariaDB, JPA/Hibernate</li>
+                        <li>• Redis (캐싱)</li>
+                        <li>• JWT 인증</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-brain text-accent mr-3"></i>
+                        AI Server
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• FastAPI (Python)</li>
+                        <li>• Google Gemini 2.5 Pro/Flash</li>
+                        <li>• LangChain, OpenAI</li>
+                        <li>• FAISS (벡터 검색)</li>
+                        <li>• AWS S3 (boto3)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">주요 기능</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-file-alt text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">지문 생성</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 단일 지문 생성: 특정 주제나 키워드 기반</li>
+                        <li>• 독서론 지문 생성: 독서 이론 및 방법론 관련</li>
+                        <li>• 복합 지문 생성: 여러 관점이나 자료 종합</li>
+                        <li>• 맞춤형 난이도 조절: 학습자 수준별 설정</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-question-circle text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">문항 생성</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 지문 분석 기반 문항 생성</li>
+                        <li>• 객관식, 주관식, 서술형 등 다양한 유형</li>
+                        <li>• AI 기반 문항 적절성 및 난이도 검증</li>
+                        <li>• 문항 유형별 참고 예시 제공</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-users text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">사용자 관리</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• OAuth2 소셜 로그인</li>
+                        <li>• JWT 기반 안전한 인증</li>
+                        <li>• API 호출 비용 및 사용량 모니터링</li>
+                        <li>• 사용자별 기능 접근 권한 제어</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-edit text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">콘텐츠 관리</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 생성된 콘텐츠 데이터베이스 저장</li>
+                        <li>• TipTap 에디터를 통한 실시간 편집</li>
+                        <li>• PDF, Word 등 다양한 형식 내보내기</li>
+                        <li>• 재사용 가능한 템플릿 관리</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">시스템 아키텍처</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <pre class="text-sm text-secondary overflow-x-auto">
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Vue Frontend  │    │  Spring Backend │    │   FastAPI       │
+│   (Port: 5173)  │◄──►│   (Port: 8080)  │◄──►│   AI Server     │
+│                 │    │                 │    │   (Port: 8501)  │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │                        │
+                       ┌────────┼────────┐              │
+                       │        │        │              │
+              ┌─────────▼──┐ ┌──▼──┐ ┌───▼────┐ ┌──────▼──────┐
+              │  MariaDB   │ │Redis│ │  AWS   │ │   Google    │
+              │ Database   │ │Cache│ │   S3   │ │   Gemini    │
+              └────────────┘ └─────┘ └────────┘ └─────────────┘
+                </pre>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">주요 컴포넌트</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• AI 서비스 계층: Gemini API를 활용한 지문/문항 생성</li>
+                        <li>• 비즈니스 로직 계층: Spring Boot 기반 핵심 처리</li>
+                        <li>• 프레젠테이션 계층: Vue.js 기반 사용자 인터페이스</li>
+                        <li>• 데이터 계층: MariaDB 영구 저장소 및 Redis 캐시</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">데이터베이스 스키마</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• User: 사용자 정보 및 인증 데이터</li>
+                        <li>• Passage: 생성된 지문 정보 및 메타데이터</li>
+                        <li>• Question: 문항 정보 및 정답 데이터</li>
+                        <li>• Template: 재사용 가능한 템플릿 정보</li>
+                        <li>• Usage: API 사용량 및 비용 추적 데이터</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Projects -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="index.html#projects" class="inline-flex items-center px-6 py-3 rounded-lg transition-colors" style="background-color: #F7BFA5; color: white;" onmouseover="this.style.backgroundColor='#E5A689';" onmouseout="this.style.backgroundColor='#F7BFA5';">
+                <i class="fas fa-arrow-left mr-2"></i>
+                다른 프로젝트 보기
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-8" style="background-color: #2d3748;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Shin Young Lee. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

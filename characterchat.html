@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐미 - AI 기반 인터랙티브 스토리텔링 캐릭터챗봇 | 이신영</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2d3748',
+                        'secondary': '#4a5568',
+                        'accent': '#F7BFA5',
+                        'sub-accent': '#FBE4D6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .highlight-accent {
+            background: linear-gradient(120deg, #FBE4D6 0%, #FBE4D6 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 font-sans" style="background-color: #FAFAFA;">
+    <!-- Navigation -->
+    <nav class="sticky top-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-primary">
+                    <a href="index.html">Portfolio</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="nav-link text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="index.html#projects" class="nav-link text-secondary hover:text-primary transition-colors">Projects</a>
+                    <a href="index.html#experience" class="nav-link text-secondary hover:text-primary transition-colors">Experience</a>
+                    <a href="index.html#about" class="nav-link text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="index.html#contact" class="nav-link text-secondary hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-secondary" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full mb-6">
+                    <i class="fas fa-comments text-3xl text-white"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+                    <span class="highlight-accent">캐미</span> - AI 기반 인터랙티브 스토리텔링 캐릭터챗봇
+                </h1>
+                <p class="text-xl text-secondary mb-8 max-w-3xl mx-auto">
+                    사용자는 자신의 캐릭터를 생성하고, AI 기반의 다양한 페르소나와 상호작용하며 스토리텔링 형식으로 퀘스트를 해결합니다.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://github.com/2shin0/character-chat" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="background-color: #F7BFA5; color: white;" onmouseover="this.style.backgroundColor='#E5A689';" onmouseout="this.style.backgroundColor='#F7BFA5';">
+                        <i class="fab fa-github mr-2"></i>
+                        GitHub 보기
+                    </a>
+                    <span class="px-6 py-3 rounded-lg" style="border: 2px solid #F7BFA5; color: #F7BFA5;">
+                        <i class="fas fa-calendar mr-2"></i>
+                        2025.02.11 ~ 2025.05.02
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">프로젝트 개요</h2>
+                    <p class="text-secondary mb-6 leading-relaxed">
+                        캐미는 사내 AI 에이전트 스터디로 시작되어 진행된 프로젝트입니다. OpenAI GPT 모델과 DALL-E를 활용하여 개인화된 캐릭터 이미지 생성, 동적 스토리 전개, 그리고 몰입감 있는 대화 경험을 제공합니다.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-accent mr-3"></i>
+                            <span><strong>팀원:</strong> 이신영, 김현경, 손명근, 정도환</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-user-tie text-accent mr-3"></i>
+                            <span><strong>역할:</strong> 기획 및 개발</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-primary mb-4">주요 특징</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>DALL-E 3를 활용한 AI 기반 캐릭터 이미지 자동 생성</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>테마별 스토리 배경 및 동적 세계관 구축</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>단계별 퀘스트 진행 관리 시스템</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mr-3 mt-1"></i>
+                            <span>다중 AI 캐릭터와의 자연스러운 대화</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">기술 스택</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-laptop-code text-accent mr-3"></i>
+                        Frontend
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• React 19 + TypeScript</li>
+                        <li>• Material-UI (MUI)</li>
+                        <li>• Zustand (상태 관리)</li>
+                        <li>• Emotion, Tailwind CSS</li>
+                        <li>• Vite (빌드 도구)</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-server text-accent mr-3"></i>
+                        Backend
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• FastAPI (Python)</li>
+                        <li>• OpenAI GPT-4, DALL-E 3</li>
+                        <li>• LangChain</li>
+                        <li>• PostgreSQL (AsyncPG)</li>
+                        <li>• Redis, SQLAlchemy</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center">
+                        <i class="fas fa-tools text-accent mr-3"></i>
+                        DevOps
+                    </h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• Docker, Docker Compose</li>
+                        <li>• Gunicorn, Uvicorn</li>
+                        <li>• ESLint, TypeScript</li>
+                        <li>• Git 버전 관리</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">주요 기능</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-plus text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">캐릭터 생성 및 커스터마이징</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 사용자 맞춤형 캐릭터 생성 (외모, 나이, 직업, 성격)</li>
+                        <li>• DALL-E 3를 활용한 AI 기반 캐릭터 이미지 자동 생성</li>
+                        <li>• 개성 있는 말투와 성격 설정</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-globe text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">동적 세계관 구축</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 테마별 스토리 배경 생성</li>
+                        <li>• 장르별 세계관 설정 (판타지, SF, 현대 등)</li>
+                        <li>• 사용자 캐릭터에 맞춤화된 스토리 환경</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tasks text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">퀘스트 시스템</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 단계별 퀘스트 진행 관리</li>
+                        <li>• 퀘스트 완료 조건 및 성공 기준 설정</li>
+                        <li>• 진행 상황 실시간 추적</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-comments text-2xl text-accent mr-4"></i>
+                        <h3 class="text-xl font-semibold text-primary">AI 페르소나 대화</h3>
+                    </div>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 다중 AI 캐릭터와의 자연스러운 대화</li>
+                        <li>• 컨텍스트 기반 응답 생성</li>
+                        <li>• 캐릭터별 고유한 성격과 말투 구현</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">시스템 아키텍처</h2>
+            <div class="bg-gray-50 p-8 rounded-lg">
+                <pre class="text-sm text-secondary overflow-x-auto">
+┌─────────────────┐    ┌─────────────────┐
+│   React Frontend│    │  FastAPI Backend│
+│   (Port: 5173)  │◄──►│   (Port: 8000)  │
+└─────────────────┘    └─────────────────┘
+                                │
+                       ┌────────┼────────┐
+                       │        │        │
+              ┌─────────▼──┐ ┌──▼──┐ ┌───▼────┐
+              │ PostgreSQL │ │Redis│ │OpenAI  │
+              │ Database   │ │Cache│ │API     │
+              └────────────┘ └─────┘ └────────┘
+                </pre>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mt-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">주요 컴포넌트</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• 상태 관리: 사용자 상태, 세계 상태, 퀘스트 진행 관리</li>
+                        <li>• Persona Agent: AI 캐릭터 생성 및 대화 처리</li>
+                        <li>• Image Generator: DALL-E 기반 캐릭터 이미지 생성</li>
+                        <li>• Quest Engine: 퀘스트 로직 및 진행 상황 추적</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-primary mb-4">데이터베이스 스키마</h3>
+                    <ul class="space-y-2 text-secondary">
+                        <li>• UserChar: 사용자 캐릭터 정보</li>
+                        <li>• Theme: 스토리 테마 및 세계관</li>
+                        <li>• Persona: AI 캐릭터 정보</li>
+                        <li>• Quest: 퀘스트 데이터</li>
+                        <li>• Chat: 대화 기록</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="py-16" style="background-color: #f9f0e9;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">스크린샷</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/e15aadc2-f1d3-4d5d-9e4c-3d3d3fc1024f" alt="캐릭터 생성 화면" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">캐릭터 생성 화면</h3>
+                    <p class="text-secondary">사용자 맞춤형 캐릭터 생성 및 커스터마이징</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/11565912-3a6f-4a10-a5fe-68025ada6283" alt="세계관 설정 화면" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">세계관 설정 화면</h3>
+                    <p class="text-secondary">테마별 스토리 배경 및 세계관 구축</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/f1ad2432-71af-455b-a83e-3306c43aca71" alt="관계 설정 화면" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">관계 설정 화면</h3>
+                    <p class="text-secondary">캐릭터 간 관계 설정 및 관리</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://github.com/user-attachments/assets/0dd613c4-c468-424f-bc38-e9680b10fae8" alt="채팅 인터페이스" class="w-full rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-primary mb-2">채팅 인터페이스</h3>
+                    <p class="text-secondary">AI 캐릭터와의 실시간 대화</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Projects -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <a href="index.html#projects" class="inline-flex items-center px-6 py-3 rounded-lg transition-colors" style="background-color: #F7BFA5; color: white;" onmouseover="this.style.backgroundColor='#E5A689';" onmouseout="this.style.backgroundColor='#F7BFA5';">
+                <i class="fas fa-arrow-left mr-2"></i>
+                다른 프로젝트 보기
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-8" style="background-color: #2d3748;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Shin Young Lee. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
