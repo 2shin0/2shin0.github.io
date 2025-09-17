@@ -13,22 +13,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
+            if (!targetId || !targetId.startsWith('#')) return;
+
             const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-            }
+            if (!targetSection) return;
+
+            // Respect CSS scroll-margin-top (e.g., Tailwind's scroll-mt-*)
+            e.preventDefault();
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // Close mobile menu if open
+            mobileMenu.classList.add('hidden');
         });
     });
 
@@ -49,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollY = currentScrollY;
     });
 
-    // Active navigation highlighting
-    const sections = document.querySelectorAll('section[id]');
+    // Active navigation highlighting (include extra blocks)
+    const sections = document.querySelectorAll('section[id], #tech-stack, #certifications');
     const navItems = document.querySelectorAll('.nav-link');
 
     function highlightNavigation() {
@@ -93,38 +89,60 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe all sections for animation
+    // Observe all sections/blocks for animation
     sections.forEach(section => {
         observer.observe(section);
     });
 
-    // Project cards hover effect
-    const projectCards = document.querySelectorAll('.bg-white.rounded-lg.shadow-md');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.transition = 'transform 0.3s ease';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
+    // Tech stack cards staggered animation on scroll
+    const techCards = document.querySelectorAll('#tech-stack .grid > div');
+    techCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
     });
 
-    // Tech stack icons animation
-    const techIcons = document.querySelectorAll('.grid.grid-cols-2 > div');
-    
-    techIcons.forEach((icon, index) => {
-        icon.style.opacity = '0';
-        icon.style.transform = 'translateY(20px)';
-        
-        setTimeout(() => {
-            icon.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            icon.style.opacity = '1';
-            icon.style.transform = 'translateY(0)';
-        }, index * 100);
+    const techObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const cards = Array.from(techCards);
+            cards.forEach((card, idx) => {
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, idx * 120);
+            });
+            obs.disconnect(); // run once
+        });
+    }, { threshold: 0.2 });
+
+    const techSection = document.querySelector('#tech-stack');
+    if (techSection) techObserver.observe(techSection);
+
+    // Lecture cards staggered animation on scroll
+    const lectureCards = document.querySelectorAll('#lectures .grid > a');
+    lectureCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
     });
+
+    const lectureObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const cards = Array.from(lectureCards);
+            cards.forEach((card, idx) => {
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, idx * 120);
+            });
+            obs.disconnect();
+        });
+    }, { threshold: 0.2 });
+
+    const lecturesSection = document.querySelector('#lectures');
+    if (lecturesSection) lectureObserver.observe(lecturesSection);
 
     // Contact form validation (if needed)
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
