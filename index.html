@@ -56,7 +56,6 @@
         details summary i { transition: transform 0.2s ease; }
         details[open] summary i { transform: rotate(180deg); }
 
-        /* 언어 토글 */
         .lang-toggle {
             display: flex;
             align-items: center;
@@ -80,27 +79,87 @@
             color: #2d3748;
         }
         .lang-sep { color: #CBD5E0; font-size: 11px; }
+
+        /* Bridge builder 태그 스타일 */
+        .bridge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1.5px solid;
+        }
+
+        /* 수상 모달 */
+        .award-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        .award-modal-overlay.active {
+            display: flex;
+        }
+        .award-modal {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            max-width: 480px;
+            width: 90%;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        /* 강의 사진 모달 */
+        .photo-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        .photo-modal-overlay.active {
+            display: flex;
+        }
+        .photo-modal {
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+        }
+
+        /* 강의 테이블 */
+        .lecture-table th {
+            background-color: #f7f7f7;
+            font-weight: 600;
+            color: #2d3748;
+            padding: 10px 14px;
+            text-align: left;
+            font-size: 13px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .lecture-table td {
+            padding: 10px 14px;
+            font-size: 13px;
+            color: #4a5568;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+        }
+        .lecture-table tr:last-child td {
+            border-bottom: none;
+        }
+        .lecture-table tr:hover td {
+            background-color: #fafafa;
+        }
     </style>      
 </head>
-<script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const highlights = document.querySelectorAll(".highlight-accent");
-      highlights.forEach((el, idx) => {
-        setTimeout(() => el.classList.add("is-on"), 250 + idx * 120);
-      });
-    });
-
-    const btn = document.getElementById("mobile-menu-btn");
-    const menu = document.getElementById("mobile-menu");
-    if (btn && menu) {
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-      menu.querySelectorAll("a").forEach(a => {
-        a.addEventListener("click", () => menu.classList.add("hidden"));
-      });
-    }
-</script>
   
 <body class="text-gray-800 font-sans" style="background-color: #FAFAFA;">
     <!-- Navigation -->
@@ -113,9 +172,9 @@
                     <a href="#experience" class="block py-2 text-secondary hover:text-primary">경험</a>
                     <a href="#tech-stack" class="block py-2 text-secondary hover:text-primary">기술</a>
                     <a href="#certifications" class="block py-2 text-secondary hover:text-primary">자격</a>
+                    <a href="#awards" class="block py-2 text-secondary hover:text-primary">수상</a>
                     <a href="#projects" class="block py-2 text-secondary hover:text-primary">프로젝트</a>
                     <a href="#lectures" class="block py-2 text-secondary hover:text-primary">강의</a>
-                    <!-- 언어 토글 -->
                     <div class="lang-toggle">
                         <a href="#" class="active">KO</a>
                         <span class="lang-sep">/</span>
@@ -127,13 +186,13 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div class="md:hidden hidden bg-white border-t" id="mobile-menu">
             <div class="px-4 py-2 space-y-2">
                 <a href="#home" class="block py-2 text-secondary hover:text-primary">홈</a>
                 <a href="#experience" class="block py-2 text-secondary hover:text-primary">경험</a>
                 <a href="#tech-stack" class="block py-2 text-secondary hover:text-primary">기술</a>
                 <a href="#certifications" class="block py-2 text-secondary hover:text-primary">자격</a>
+                <a href="#awards" class="block py-2 text-secondary hover:text-primary">수상</a>
                 <a href="#projects" class="block py-2 text-secondary hover:text-primary">프로젝트</a>
                 <a href="#lectures" class="block py-2 text-secondary hover:text-primary">강의</a>
                 <div class="py-2 border-t border-gray-100">
@@ -150,38 +209,74 @@
     <!-- Hero Section -->
     <section id="home" class="pt-24 pb-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                 <div class="md:w-2/3 mb-8 md:mb-0">
-                    <p class="text-xl text-accent mb-6">데이터로 해석하고, AI로 해결합니다</p>
+                    <!-- 수정 1: 헤드라인 변경 -->
+                    <p class="text-xl text-accent mb-6">데이터로 사람을 읽고, 기술로 구조를 만듭니다</p>
                     <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
                         안녕하세요,
                         <span class="relative inline-block highlight-accent">이신영</span>입니다
                     </h1>
-                    <p class="text-lg text-secondary mb-8 leading-relaxed">
-                        데이터 기반의 문제 분석과 AI 솔루션 개발에 집중합니다.<br>
-                        AI 기술을 연구하고, 적용하고, 나누는 일에서 보람을 찾습니다.
-                    </p>
+
+                    <!-- 수정 2: 소개 문구 변경 -->
+                    <div class="mb-6">
+                        <p class="text-lg text-secondary mb-2 leading-relaxed font-medium">기술과 사람의 간극을 좁히는 Bridge Builder</p>
+                        <p class="text-base text-secondary mb-4 leading-relaxed">
+                            교육공학이라는 인문학적 토대 위에 AI 개발이라는 기술적 도구를 더해<br>
+                            사람의 성장을 돕는 디지털 서비스를 만듭니다.<br>
+                            유저의 경험과 조직의 성장을 고려한 최적의 솔루션을 고민합니다.
+                        </p>
+
+                        <!-- How I build the bridge -->
+                        <div class="bg-gray-50 rounded-xl p-5 mb-4">
+                            <p class="text-xs font-semibold text-primary mb-3 tracking-widest uppercase">How I Build the Bridge</p>
+                            <div class="flex flex-col sm:flex-row gap-3 mb-3">
+                                <div class="flex-1 bg-white rounded-lg p-4 border border-gray-100">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-users text-sm" style="color: #F7BFA5;"></i>
+                                        <span class="text-xs font-semibold text-primary">Human Side</span>
+                                    </div>
+                                    <p class="text-xs text-secondary leading-relaxed">교육공학적 설계를 바탕으로 사용자 경험(UX)과 성과를 극대화하는 기획 및 비즈니스 솔루션 제시</p>
+                                </div>
+                                <div class="flex-1 bg-white rounded-lg p-4 border border-gray-100">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i class="fas fa-code text-sm" style="color: #F7BFA5;"></i>
+                                        <span class="text-xs font-semibold text-primary">Tech Side</span>
+                                    </div>
+                                    <p class="text-xs text-secondary leading-relaxed">Python 기반 데이터 분석 및 맞춤형 AI 솔루션 구축</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bridge-tag text-xs" style="border-color: #F7BFA5; color: #4a5568;">
+                                    <i class="fas fa-layer-group text-xs" style="color: #F7BFA5;"></i> Domain: EdTech
+                                </span>
+                                <span class="bridge-tag text-xs" style="border-color: #F7BFA5; color: #4a5568;">
+                                    <i class="fas fa-people-arrows text-xs" style="color: #F7BFA5;"></i> HR Tech
+                                </span>
+                            </div>
+
+                        <!-- Current Focus -->
+                            <div class="flex items-start gap-2 text-sm text-secondary pt-4 border-t border-gray-200">
+                                <i class="fas fa-circle-dot mt-0.5 text-xs" style="color: #F7BFA5;"></i>
+                                <span><span class="font-semibold text-primary">Current Focus</span> — 데이터 기반 HR 솔루션 및 교수설계 기반 AI 서비스 기획 및 개발</span>
+                            </div>
+                        </div>
+
                     <div class="flex flex-wrap gap-4">
                         <a href="https://github.com/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
-                            <i class="fab fa-github mr-2"></i>
-                            GitHub
+                            <i class="fab fa-github mr-2"></i>GitHub
                         </a>
                         <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
-                            <i class="fab fa-linkedin mr-2"></i>
-                            LinkedIn
+                            <i class="fab fa-linkedin mr-2"></i>LinkedIn
                         </a>
-                        <a href="/cdn-cgi/l/email-protection#dbebe9f5a8b3b2b5f5ebeb9bbcb6bab2b7f5b8b4b6" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
-                            <i class="fas fa-envelope mr-2"></i>
-                            이메일
+                        <a href="mailto:02.shin.00@gmail.com" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
+                            <i class="fas fa-envelope mr-2"></i>이메일
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/3 flex justify-center">
                     <div class="w-64 h-64 overflow-hidden bg-white">
-                        <img
-                          src="contents/profile.jpeg"
-                          alt="프로필 사진"
-                          class="w-full h-full object-contain" />
+                        <img src="contents/profile.jpeg" alt="프로필 사진" class="w-full h-full object-contain" />
                     </div>
                 </div>
             </div>
@@ -190,191 +285,197 @@
 
     <!-- Experience Section -->
     <section id="experience" class="py-16 bg-white scroll-mt-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h2 class="text-3xl font-bold text-primary mb-12">
+            <span class="relative inline-block highlight-accent">학력 & 경력</span>
+        </h2>
+        
+        <div class="space-y-6 mb-20">
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2024.06 — 2025.09</span>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <h4 class="text-lg font-semibold text-primary">AI 학습 경험 설계자</h4>
+                        <p class="text-secondary">천재교육 · 디지털러닝본부 디지털교육팀</p>
+                        <div class="mt-4 text-secondary">
+                            <ul class="list-disc pl-5 text-sm space-y-1">
+                                <li>Knowledge Tracing, GraphDB, 생성형 AI를 활용한 PoC·MVP 개발</li>
+                                <li>GPT 파인튜닝 및 LLM 벤치마킹을 통한 수능 국어 지문·문항 자동 생성 API 서비스 개발</li>
+                                <li>IRT, Deep Knowledge Tracing 기반 수학 코스웨어 MVP 개발</li>
+                                <li>데이터 분석 및 대시보드 제작</li>
+                                <li>인공지능 강의 및 멘토링</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2025.08 — 2025.10</span>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <h4 class="text-lg font-semibold text-primary">강사</h4>
+                        <p class="text-secondary">메타코드</p>
+                        <p class="mt-2 text-sm text-secondary">AI 자동화 및 데이터 분석 교수설계 및 강의</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2022.06 — 2023.02</span>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <h4 class="text-lg font-semibold text-primary">연구원</h4>
+                        <p class="text-secondary">한국교육개발원 · 교육통계센터</p>
+                        <ul class="mt-4 list-disc pl-5 text-sm text-secondary space-y-1">
+                            <li>학교폭력 실태조사 데이터 검수 및 통계 결과 보고서 발간</li>
+                            <li>행정 업무 지원 및 내부 문서 관리</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2019 — 2024</span>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-primary">교육공학과 학사</h4>
+                                <p class="text-secondary">이화여자대학교</p>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1oTo-7vlRDOjzmrSEQtqaKTtS6AET4SNK/view?usp=sharing" target="_blank" 
+                            class="text-sm font-medium transition-colors flex items-center w-fit px-3 py-1.5 rounded-md border border-transparent hover:border-[#F7BFA5]" 
+                            style="color: #F7BFA5;" 
+                            onmouseover="this.style.color='#E5A689';" 
+                            onmouseout="this.style.color='#F7BFA5';">
+                                <i class="fab fa-google-drive mr-2"></i>포트폴리오 보기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div id="tech-stack" class="pt-16 mb-20">
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">기술 스택</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-code text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Python</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">SQL</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">JavaScript</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-brain text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">AI · Data</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">RAG</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GraphDB</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Knowledge Tracing</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-database text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Database</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">PostgreSQL</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Neo4j</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">학력 & 경력</span></h2>
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">자격</span>
+            </h2>
             
-            <div class="mb-12">
-                <div class="space-y-6">
-
-                    <div class="flex flex-col md:flex-row md:items-center border-l-4 border-primary pl-6">
-                        <div class="md:w-1/4 mb-2 md:mb-0">
-                            <span class="text-accent font-medium">2024.06 — 2025.09</span>
-                        </div>
-                        <div class="md:w-3/4">
-                            <div class="group bg-gray-50 rounded-md p-4">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <h4 class="text-lg font-semibold text-primary">AI 학습 경험 설계자</h4>
-                                        <p class="text-secondary">천재교육 · 디지털러닝본부 디지털교육팀</p>
-                                    </div>
-                                </div>
-                                <div class="mt-4 text-secondary space-y-3">
-                                    <ul class="list-disc pl-5 text-sm space-y-1">
-                                        <li>Knowledge Tracing, GraphDB, 생성형 AI를 활용한 PoC·MVP 개발</li>
-                                        <li>GPT 파인튜닝 및 LLM 벤치마킹을 통한 수능 국어 지문·문항 자동 생성 API 서비스 개발, Agentic Workflow 구축</li>
-                                        <li>IRT, Deep Knowledge Tracing, GraphDB 기반 수학 코스웨어 MVP 개발</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4 transition-transform hover:-translate-y-1">
+                    <i class="fas fa-award text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">빅데이터분석기사</h4>
+                        <p class="text-secondary text-sm">한국데이터산업진흥원 · 2025.07</p>
                     </div>
-
-                    <div class="flex flex-col md:flex-row md:items-center border-l-4 border-primary pl-6">
-                        <div class="md:w-1/4 mb-2 md:mb-0">
-                            <span class="text-accent font-medium">2025.08 — 2025.10</span>
-                        </div>
-                        <div class="md:w-3/4">
-                            <div class="group bg-gray-50 rounded-md p-4">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <h4 class="text-lg font-semibold text-primary">강사</h4>
-                                        <p class="text-secondary">메타코드</p>
-                                    </div>
-                                </div>
-                                <div class="mt-4 text-secondary space-y-3">
-                                    <p class="text-sm">AI 자동화 및 데이터 분석 교수설계 및 강의</p>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4 transition-transform hover:-translate-y-1">
+                    <i class="fas fa-chalkboard-teacher text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">NCS 직업훈련 교사 (IT 개발, 인공지능, IT 전략·기획)</h4>
+                        <p class="text-secondary text-sm">고용노동부 · 2025.07</p>
+                    </div>  
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4 transition-transform hover:-translate-y-1">
+                    <i class="fab fa-aws text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">AWS Certified AI Practitioner</h4>
+                        <p class="text-secondary text-sm">AWS · 2025.02</p>
                     </div>
+                </div>
+                
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4 transition-transform hover:-translate-y-1">
+                    <i class="fas fa-database text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">SQL 개발자(SQLD)</h4>
+                        <p class="text-secondary text-sm">한국데이터산업진흥원 · 2024.06</p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="awards" class="py-16 bg-gray-50 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">수상</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 gap-6">
+                
+                <div class="bg-white rounded-xl shadow-md border border-gray-100 p-6 transition-all hover:shadow-lg flex flex-col md:flex-row items-center gap-6 group">
                     
-                    <div class="flex flex-col md:flex-row md:items-center border-l-4 border-primary pl-6">
-                        <div class="md:w-1/4 mb-2 md:mb-0">
-                            <span class="text-accent font-medium">2022.06 — 2023.02</span>
-                        </div>
-                        <div class="md:w-3/4">
-                            <div class="group bg-gray-50 rounded-md p-4">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <h4 class="text-lg font-semibold text-primary">연구원</h4>
-                                        <p class="text-secondary">한국교육개발원 · 교육통계센터 학교폭력실태조사팀</p>
-                                    </div>
-                                </div>
-                                <div class="mt-4 text-secondary space-y-3">
-                                    <p class="text-sm">학교폭력 실태조사 데이터셋 검토 및 결과 보고서 발간</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="hidden md:flex w-20 h-20 items-center justify-center rounded-full shrink-0" style="background: linear-gradient(135deg, #fff5f0 0%, #ffe0d1 100%);">
+                        <i class="fas fa-trophy text-3xl group-hover:scale-110 transition-transform duration-300" style="color: #F7BFA5;"></i>
                     </div>
 
-                    <div class="flex flex-col md:flex-row md:items-center border-l-4 border-primary pl-6">
-                        <div class="md:w-1/4 mb-2 md:mb-0">
-                            <span class="text-accent font-medium">2019 — 2024</span>
+                    <div class="flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                            <h4 class="text-xl font-bold text-primary">제6회 교육 공공데이터 활용 공모전 우수상</h4>
+                            <span class="text-xs font-medium px-2 py-1 rounded bg-orange-50 text-orange-400 border border-orange-100 w-fit">2024.08</span>
                         </div>
-                        <div class="md:w-3/4">
-                            <div class="group bg-gray-50 rounded-md p-4">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <h4 class="text-lg font-semibold text-primary">교육공학과 학사</h4>
-                                        <p class="text-secondary">이화여자대학교</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="text-secondary text-sm font-medium mb-2">한국과학창의재단</p>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            GPT 파인튜닝, 프롬프트 엔지니어링, RAG를 활용한 특수 교육 학생용 AI 지원 서비스 개발
+                        </p>
                     </div>
-                </div>
-            </div>
 
-            <!-- Tech Stack -->
-            <div id="tech-stack" class="mb-12 pt-16 scroll-mt-24">
-                <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">기술 스택</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-code text-primary mr-2"></i>
-                            <h3 class="text-lg font-semibold text-primary">Languages</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Python</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">JavaScript</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">SQL</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-laptop-code text-primary mr-2"></i>
-                            <h3 class="text-lg font-semibold text-primary">Frontend</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">React</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">HTML/CSS</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-server text-primary mr-2"></i>
-                            <h3 class="text-lg font-semibold text-primary">Backend</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">FastAPI</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Flask</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-brain text-primary mr-2"></i>
-                            <h3 class="text-lg font-semibold text-primary">AI · Data</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">RAG</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Vector DB (FAISS)</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GraphDB</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Recommendation System</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Knowledge Tracing</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-database text-primary mr-2"></i>
-                            <h3 class="text-lg font-semibold text-primary">Database</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">PostgreSQL</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">MySQL</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Neo4j</span>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                        <div class="flex items-center mb-3">
-                            <i class="fas fa-cloud text-primary mr-2"></i>
-                            <h3 class="text-lg font-semibold text-primary">DevOps · Infrastructure</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GitHub Actions</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Docker</span>
-                            <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">AWS (EC2/S3)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certifications -->
-            <div id="certifications" class="pt-16 scroll-mt-24">
-                <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">자격증 & 수상</span></h2>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-semibold text-primary mb-2">빅데이터분석기사</h4>
-                        <p class="text-secondary">한국데이터산업진흥원 · 2025.07</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-semibold text-primary mb-2">AWS Certified AI Practitioner</h4>
-                        <p class="text-secondary">Amazon Web Services · 2025.02</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-semibold text-primary mb-2">Neo4j Graph Data Science Certification</h4>
-                        <p class="text-secondary">Neo4j · 2024.09</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-semibold text-primary mb-2">TEPS (354점)</h4>
-                        <p class="text-secondary">서울대학교 · 2024.08</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-semibold text-primary mb-2">제6회 교육 공공데이터 활용 공모전 수상</h4>
-                        <p class="text-secondary">한국과학창의재단 · 2024.08</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="text-lg font-semibold text-primary mb-2">SQLD (SQL 개발자)</h4>
-                        <p class="text-secondary">한국데이터산업진흥원 · 2024.06</p>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/2shin0/ThisAble_service" target="_blank" class="text-sm transition-colors flex items-center" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
+                            <i class="fab fa-github mr-1.5"></i>GitHub
+                        </a>
                     </div>
                 </div>
             </div>
@@ -392,7 +493,7 @@
                         <img src="contents/genie-thumbnail.png" alt="지니 프로젝트" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Genie — AI 수능 국어 지문·문항 자동 생성</h3>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Genie</h3>
                         <p class="text-secondary mb-4">Google Gemini AI를 활용해 수능 국어 지문과 문항을 자동으로 생성하는 플랫폼. 교육 현장의 콘텐츠 제작 효율을 높이는 API 서비스.</p>
                         <div class="mb-4">
                             <p class="text-sm text-accent mb-2"><strong>역할 :</strong> 기획 & API 개발</p>
@@ -406,7 +507,7 @@
                         <img src="contents/mathchat-thumbnail.jpg" alt="수학 챗봇" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Math Chatbot — 단계별 수학 학습 챗봇</h3>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Math Chatbot</h3>
                         <p class="text-secondary mb-4">RAG 기술을 활용한 중등 수학 개념·풀이 챗봇. 학습자의 질문에 단계별 풀이를 제공하는 AI 튜터.</p>
                         <div class="mb-4">
                             <p class="text-sm text-accent mb-2"><strong>역할 :</strong> 개발 멘토링</p>
@@ -425,10 +526,10 @@
                         <img src="contents/coursemath-thumbnail.png" alt="코스매쓰" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">CosMath — IRT × DKT 기반 개인화 수학 교육</h3>
+                        <h3 class="text-xl font-semibold text-primary mb-2">CosMath</h3>
                         <p class="text-secondary mb-4">KSM·IRT 이론을 적용한 초등 수학 AI 코스웨어. 적응형 평가와 지식 맵 시각화로 개인 맞춤 학습 경험 제공.</p>
                         <div class="mb-4">
-                            <p class="text-sm text-accent mb-2"><strong>역할 :</strong> 프론트엔드 & 백엔드 개발</p>
+                            <p class="text-sm text-accent mb-2"><strong>역할 :</strong> 프론트                                                                          엔드 & 백엔드 개발</p>
                             <p class="text-sm text-accent"><strong>기술 스택 :</strong> React, TypeScript</p>
                         </div>
                         <div class="flex gap-2">
@@ -442,19 +543,85 @@
         </div>
     </section>
 
-    <!-- Lectures Section -->
+    <!-- 수정 5: 강의 섹션 구조화 + 네팔 카트만두 추가 + 사진 모달 -->
     <section id="lectures" class="py-16 bg-white scroll-mt-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-6"><span class="relative inline-block highlight-accent">강의 활동</span></h2>
-            <ul class="list-disc pl-5 text-secondary space-y-1 mb-8">
-                <li>NCS 직업훈련 교사 자격 보유 (IT 개발, 인공지능, IT 전략·기획)</li>
-                <li>Google Apps Script·Gemini 활용 바이브코딩 워크숍 진행 (기업 임직원, 진주교대 대학원생 대상)</li>
-                <li>지식 맵 설계, 추천 로직, 수학 OCR, SEL 챗봇 개발 프로젝트 멘토링</li>
-                <li>인공지능, 딥러닝, 개인화 학습 프로세스 강의</li>
-                <li>서울대 교육공학과 석사 과정 세미나 — GraphDB·GraphRAG 기반 교사 보조 챗봇 구현</li>
-                <li>Knowledge Tracing·추천 시스템 EdTech 세미나 기획 및 운영 (임직원, 훈련생, 외부 참가자 대상)</li>
-                <li>AI 에이전트·데이터 분석 6시간 과정 설계 및 강의 — 생성형 AI 응용, 노코드 자동화, 바이브코딩, 에이전트 개발 (MetaCode)</li>
-            </ul>
+            <h2 class="text-3xl font-bold text-primary mb-10"><span class="relative inline-block highlight-accent">강의 활동</span></h2>
+
+            <!-- 강의 테이블 -->
+            <div class="overflow-x-auto rounded-xl border border-gray-200 mb-12 shadow-sm">
+                <table class="w-full lecture-table">
+                    <thead>
+                        <tr>
+                            <th>대상</th>
+                            <th>주제</th>
+                            <th>형태</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-medium text-primary">KDT PM 수강생</td>
+                            <td>인공지능, 머신러닝, 딥러닝, 개인화 학습 프로세스</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-orange-50 text-orange-600 border border-orange-100">강의</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-primary">KDT 멘토링</td>
+                            <td>맞춤 학습 코스웨어, 단계별 수학 풀이 챗봇, SEL 챗봇 멘토링 및 개발</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-purple-50 text-purple-600 border border-purple-100">멘토링</span></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="font-medium text-primary">서울대 교육공학과 석사 과정</td>
+                            <td>GraphDB·GraphRAG 기반 교사 보조 챗봇 구현</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-blue-50 text-blue-600 border border-blue-100">세미나</span></td>
+                            <td>
+                                <button onclick="openPhotoModal('snu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                    <i class="fas fa-image text-xs"></i> 사진 보기
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-primary">기업 임직원·KDT 교육생·외부 참가자</td>
+                            <td>Knowledge Tracing·추천 시스템 EdTech 세미나</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-blue-50 text-blue-600 border border-blue-100">세미나</span></td>
+                            <td>
+                                <button onclick="openPhotoModal('edtech-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                    <i class="fas fa-image text-xs"></i> 사진 보기
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-primary">사내 PM·진주교대 대학원생</td>
+                            <td>Google Apps Script·Gemini 활용 바이브코딩 워크숍</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-green-50 text-green-600 border border-green-100">워크숍</span></td>
+                            <td>
+                                <button onclick="openPhotoModal('cjeu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                    <i class="fas fa-image text-xs"></i> 사진 보기
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="font-medium text-primary">MetaCode 수강생</td>
+                            <td>AI 에이전트·데이터 분석 6시간 과정 (생성형 AI, 노코드 자동화, 바이브코딩, 에이전트 개발)</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-orange-50 text-orange-600 border border-orange-100">강의</span></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="font-medium text-primary">네팔 카트만두대학 부트캠프 운영 및 멘토링</td>
+                            <td>AI 프로젝트 멘토링</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-purple-50 text-purple-600 border border-purple-100">멘토링</span></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 강의 샘플 -->
             <h3 class="text-2xl font-semibold text-primary mb-6">강의 샘플</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <a href="https://youtu.be/B-14Ksjonvk?si=ruslFGh1NLSAzutu" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
@@ -504,7 +671,27 @@
         </div>
     </footer>
 
-    
+    <!-- 수상 상세 모달 -->
+    <div class="award-modal-overlay" id="awardModalOverlay" onclick="closeAwardModal(event)">
+        <div class="award-modal" id="awardModalContent">
+            <button onclick="closeAwardModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div id="awardModalBody"></div>
+        </div>
+    </div>
+
+    <!-- 강의 사진 모달 -->
+    <div class="photo-modal-overlay" id="photoModalOverlay" onclick="closePhotoModal(event)">
+        <div class="photo-modal">
+            <button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <img id="photoModalImg" src="" alt="강의 사진" class="w-full rounded-lg" />
+            <p id="photoModalCaption" class="text-white text-center mt-3 text-sm"></p>
+        </div>
+    </div>
+
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const highlights = document.querySelectorAll('.highlight-accent');
@@ -512,7 +699,6 @@
                 setTimeout(() => el.classList.add('is-on'), 250 + idx * 120);
             });
 
-            // Mobile menu toggle
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             if (btn && menu) {
@@ -520,6 +706,85 @@
                 menu.querySelectorAll('a').forEach(a =>
                     a.addEventListener('click', () => menu.classList.add('hidden'))
                 );
+            }
+        });
+
+        // 수상 모달 데이터
+        const awardData = {
+            award1: {
+                title: '제6회 교육 공공데이터 활용 공모전 우수상',
+                org: '한국과학창의재단 · 2024.08',
+                description: 'GPT 파인튜닝, 프롬프트 엔지니어링, RAG를 활용해 특수교육 학생을 위한 AI 지원 서비스를 개발했습니다. 특수교육 현장의 실제 데이터를 분석해 학생별 지원 필요를 정의하고, 그에 맞는 구조를 설계하는 것에서 출발했습니다.',
+                tags: ['GPT Fine-tuning', 'Prompt Engineering', 'RAG', '특수교육'],
+                github: null,
+                link: null
+            }
+        };
+
+        // 강의 사진 데이터 — 실제 사진 경로로 교체하세요
+        const photoData = {
+            "cjeu-seminar": {
+                src: 'contents/cjeu-seminar.jpg',
+                caption: 'cjeu seminar'
+            },
+            "edtech-seminar": {
+                src: 'contents/edtech-seminar.jpg',
+                caption: 'edtech seminar'
+            },
+            "snu-seminar": {
+                src: 'contents/snu-seminar.jpg',
+                caption: 'snu seminar'
+            }
+        };
+
+        function openAwardModal(id) {
+            const data = awardData[id];
+            if (!data) return;
+            const body = document.getElementById('awardModalBody');
+            body.innerHTML = `
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fas fa-medal text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h3 class="text-lg font-bold text-primary">${data.title}</h3>
+                        <p class="text-secondary text-sm">${data.org}</p>
+                    </div>
+                </div>
+                <p class="text-secondary text-sm leading-relaxed mb-4">${data.description}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${data.tags.map(t => `<span class="px-2 py-1 rounded-full bg-orange-50 text-orange-600 border border-orange-100 text-xs">${t}</span>`).join('')}
+                </div>
+                ${data.github ? `<a href="${data.github}" target="_blank" class="inline-flex items-center gap-2 text-sm mr-4" style="color: #F7BFA5;"><i class="fab fa-github"></i> GitHub</a>` : ''}
+                ${data.link ? `<a href="${data.link}" target="_blank" class="inline-flex items-center gap-2 text-sm" style="color: #F7BFA5;"><i class="fas fa-external-link-alt"></i> 링크</a>` : ''}
+            `;
+            document.getElementById('awardModalOverlay').classList.add('active');
+        }
+
+        function closeAwardModal(event) {
+            if (!event || event.target === document.getElementById('awardModalOverlay') || !event.target) {
+                document.getElementById('awardModalOverlay').classList.remove('active');
+            }
+        }
+
+        function openPhotoModal(id) {
+            const data = photoData[id];
+            if (!data) return;
+            document.getElementById('photoModalImg').src = data.src;
+            document.getElementById('photoModalCaption').textContent = data.caption;
+            document.getElementById('photoModalOverlay').classList.add('active');
+        }
+
+        function closePhotoModal(event) {
+            // 이벤트가 없거나(X 버튼 클릭 등), 클릭한 대상이 배경(Overlay)일 때만 닫기
+            if (!event || event.target === document.getElementById('photoModalOverlay')) {
+                document.getElementById('photoModalOverlay').classList.remove('active');
+            }
+        }
+
+        // ESC 키로 모달 닫기
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeAwardModal();
+                closePhotoModal();
             }
         });
     </script>
