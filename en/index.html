@@ -51,6 +51,11 @@
           .highlight-accent::after { transition: none; width: 100%; }
         }
 
+        details summary { list-style: none; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary i { transition: transform 0.2s ease; }
+        details[open] summary i { transform: rotate(180deg); }
+
         .lang-toggle {
             display: flex;
             align-items: center;
@@ -75,6 +80,7 @@
         }
         .lang-sep { color: #CBD5E0; font-size: 11px; }
 
+        /* Bridge builder tag styles */
         .bridge-tag {
             display: inline-flex;
             align-items: center;
@@ -86,7 +92,7 @@
             border: 1.5px solid;
         }
 
-        /* Award Modal */
+        /* Award modal */
         .award-modal-overlay {
             display: none;
             position: fixed;
@@ -110,7 +116,7 @@
             overflow-y: auto;
         }
 
-        /* Photo Modal */
+        /* Photo modal */
         .photo-modal-overlay {
             display: none;
             position: fixed;
@@ -129,7 +135,7 @@
             position: relative;
         }
 
-        /* Lecture Table */
+        /* Lecture table */
         .lecture-table th {
             background-color: #f7f7f7;
             font-weight: 600;
@@ -156,6 +162,7 @@
 </head>
   
 <body class="text-gray-800 font-sans" style="background-color: #FAFAFA;">
+    <!-- Navigation -->
     <nav class="sticky top-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
@@ -164,14 +171,14 @@
                     <a href="#home" class="block py-2 text-secondary hover:text-primary">Home</a>
                     <a href="#experience" class="block py-2 text-secondary hover:text-primary">Experience</a>
                     <a href="#tech" class="block py-2 text-secondary hover:text-primary">Tech</a>
-                    <a href="#certifications" class="block py-2 text-secondary hover:text-primary">Certs</a>
+                    <a href="#certifications" class="block py-2 text-secondary hover:text-primary">Certifications</a>
                     <a href="#awards" class="block py-2 text-secondary hover:text-primary">Awards</a>
                     <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
                     <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Lectures</a>
                     <div class="lang-toggle">
-                        <a href="../">KO</a>
-                        <span class="lang-sep">/</span>
                         <a href="#" class="active">EN</a>
+                        <span class="lang-sep">/</span>
+                        <a href="ko/">KO</a>
                     </div>
                 </div>
                 <button class="md:hidden text-secondary" id="mobile-menu-btn">
@@ -181,43 +188,46 @@
         </div>
         <div class="md:hidden hidden bg-white border-t" id="mobile-menu">
             <div class="px-4 py-2 space-y-2">
-                <a href="#home" class="block py-2">Home</a>
-                <a href="#experience" class="block py-2">Experience</a>
-                <a href="#tech" class="block py-2">Tech</a>
-                <a href="#certifications" class="block py-2">Certs</a>
-                <a href="#awards" class="block py-2">Awards</a>
-                <a href="#projects" class="block py-2">Projects</a>
-                <a href="#lectures" class="block py-2">Lectures</a>
+                <a href="#home" class="block py-2 text-secondary hover:text-primary">Home</a>
+                <a href="#experience" class="block py-2 text-secondary hover:text-primary">Experience</a>
+                <a href="#tech" class="block py-2 text-secondary hover:text-primary">Tech</a>
+                <a href="#certifications" class="block py-2 text-secondary hover:text-primary">Certifications</a>
+                <a href="#awards" class="block py-2 text-secondary hover:text-primary">Awards</a>
+                <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
+                <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Lectures</a>
                 <div class="py-2 border-t border-gray-100">
                     <div class="lang-toggle">
-                        <a href="../">KO</a>
-                        <span class="lang-sep">/</span>
                         <a href="#" class="active">EN</a>
+                        <span class="lang-sep">/</span>
+                        <a href="ko/">KO</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="pt-24 pb-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-12">
                 <div class="md:w-2/3">
-                    <p class="text-xl text-accent mb-6 font-medium">Interpreting data, solving with AI</p>
+                    <p class="text-xl text-accent mb-6 font-medium">Understanding people through data, building solutions with technology</p>
                     <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
                         Hello, I'm <span class="relative inline-block highlight-accent">Shin Young Lee</span>
                     </h1>
-                    <p class="text-lg text-secondary mb-4 leading-relaxed font-medium">Bridge Builder closing the gap between Tech and People</p>
+                    <p class="text-lg text-secondary mb-4 leading-relaxed font-medium">A Bridge Builder narrowing the gap between technology and people</p>
                     <p class="text-base text-secondary leading-relaxed mb-8">
-                        Based on the humanistic foundation of educational technology, I create digital services that help human growth by adding AI development tools. 
-                        I contemplate the optimal solution considering both user experience and organizational growth.
+                        By adding the technical tool of AI development to the humanistic foundation of educational technology,<br>
+                        I create digital services that help people grow.<br>
+                        I deliberate on the optimal solutions considering both user experience and organizational growth.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="https://github.com/2shin0" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
                             <i class="fab fa-github mr-2"></i>GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
-                            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                        <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            LinkedIn
                         </a>
                         <a href="mailto:02.shin.00@gmail.com" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
                             <i class="fas fa-envelope mr-2"></i>Email
@@ -225,18 +235,18 @@
                     </div>
                 </div>
                 <div class="md:w-1/3 flex justify-center">
-                    <img src="../contents/profile.jpeg" alt="Profile Photo" class="w-64 h-64 object-contain" />
+                    <img src="contents/profile.jpeg" alt="Profile Picture" class="w-64 h-64 object-contain" />
                 </div>
             </div>
 
-            <div class="mt-16">
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
                 <div class="flex items-center gap-2 mb-8">
                     <i class="fas fa-circle-dot text-xs" style="color: #F7BFA5;"></i>
                     <span class="font-bold text-primary tracking-wider uppercase text-sm">How I Build the Bridge</span>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-9 h-9 rounded-full flex items-center justify-center bg-orange-50">
                                 <i class="fas fa-users text-base" style="color: #F7BFA5;"></i>
@@ -244,11 +254,12 @@
                             <span class="text-base font-bold text-primary">Human Side</span>
                         </div>
                         <p class="text-sm text-secondary leading-relaxed">
-                            Proposes planning and business solutions that maximize user experience (UX) and performance based on educational technology design. 
-                            Designs services considering the user's learning flow and cognitive processes.
+                            Based on educational technology design, I propose planning and business solutions that maximize user experience (UX) and performance. 
+                            I design services considering the user's learning flow and cognitive processes.
                         </p>
                     </div>
-                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
+
+                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-9 h-9 rounded-full flex items-center justify-center bg-orange-50">
                                 <i class="fas fa-code text-base" style="color: #F7BFA5;"></i>
@@ -256,14 +267,14 @@
                             <span class="text-base font-bold text-primary">Tech Side</span>
                         </div>
                         <p class="text-sm text-secondary leading-relaxed">
-                            Builds customized AI solutions by utilizing Python-based data analysis and latest technologies such as LLM and GraphDB. 
-                            Implements theoretical models into actual functioning services.
+                            Utilizing the latest technologies such as Python-based data analysis, LLMs, and GraphDB, I build custom AI solutions. 
+                            I implement theoretical models into actual, working services.
                         </p>
                     </div>
                 </div>
 
-                <div class="mb-12">
-                    <div class="flex items-center gap-2 mb-5">
+                <div class="mb-10">
+                    <div class="flex items-center gap-2 mb-4">
                         <i class="fas fa-circle-dot text-xs" style="color: #F7BFA5;"></i>
                         <span class="font-bold text-primary tracking-wider uppercase text-sm">Domain</span>
                     </div>
@@ -279,9 +290,9 @@
 
                 <div class="pt-8">
                     <div class="flex items-start gap-3 text-secondary">
-                        <i class="fas fa-bullseye mt-1" style="color: #F7BFA5;"></i>
+                        <i class="fas fa-circle-dot text-xs" style="color: #F7BFA5;"></i>
                         <span class="text-base">
-                            <span class="font-bold text-primary">Current Focus</span> — Focusing on planning and developing data-driven HR solutions and AI services based on instructional design.
+                            <span class="font-bold text-primary">Current Focus:</span> I am concentrating on planning and developing data-driven HR solutions and instructional design-based AI services.
                         </span>
                     </div>
                 </div>
@@ -289,90 +300,106 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
     <section id="experience" class="py-16 bg-white scroll-mt-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">Education & Experience</span></h2>
-            
-            <div class="space-y-6 mb-20">
-                <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                    <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                        <span class="text-accent font-medium">2024.06 — 2025.09</span>
-                    </div>
-                    <div class="md:w-3/4">
-                        <div class="group bg-gray-50 rounded-md p-4">
-                            <h4 class="text-lg font-semibold text-primary">AI Learning Experience Designer</h4>
-                            <p class="text-secondary">Chunjae Education · Digital Education Team</p>
-                            <div class="mt-4 text-secondary">
-                                <ul class="list-disc pl-5 text-sm space-y-1">
-                                    <li>Developed PoC/MVP leveraging Knowledge Tracing, GraphDB, and Generative AI.</li>
-                                    <li>Developed Korean CSAT passage/question generation API using GPT fine-tuning and benchmarking.</li>
-                                    <li>Built Math courseware MVP based on IRT and Deep Knowledge Tracing.</li>
-                                    <li>Data analysis, dashboard production, and AI mentoring.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h2 class="text-3xl font-bold text-primary mb-12">
+            <span class="relative inline-block highlight-accent">Education & Experience</span>
+        </h2>
+        
+        <div class="space-y-6 mb-20">
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2024.06 — 2025.09</span>
                 </div>
-
-                <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                    <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                        <span class="text-accent font-medium">2025.08 — 2025.10</span>
-                    </div>
-                    <div class="md:w-3/4">
-                        <div class="group bg-gray-50 rounded-md p-4">
-                            <h4 class="text-lg font-semibold text-primary">Instructor</h4>
-                            <p class="text-secondary">MetaCode</p>
-                            <p class="mt-2 text-sm text-secondary">Instructional design and lecturing for AI automation and data analysis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                    <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                        <span class="text-accent font-medium">2022.06 — 2023.02</span>
-                    </div>
-                    <div class="md:w-3/4">
-                        <div class="group bg-gray-50 rounded-md p-4">
-                            <h4 class="text-lg font-semibold text-primary">Researcher</h4>
-                            <p class="text-secondary">Korean Educational Development Institute (KEDI)</p>
-                            <ul class="mt-4 list-disc pl-5 text-sm text-secondary space-y-1">
-                                <li>Dataset review and report publication for the National School Violence Survey.</li>
-                                <li>Administrative support and internal document management.</li>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <h4 class="text-lg font-semibold text-primary">AI Learning Experience Designer</h4>
+                        <p class="text-secondary">Chunjae Education · Digital Learning Division, Digital Education Team</p>
+                        <div class="mt-4 text-secondary">
+                            <ul class="list-disc pl-5 text-sm space-y-1">
+                                <li>PoC/MVP development using Knowledge Tracing, GraphDB, and Generative AI</li>
+                                <li>Developed an API service for automatic generation of CSAT Korean passages and questions through GPT fine-tuning and LLM benchmarking</li>
+                                <li>Developed math courseware MVP based on IRT and Deep Knowledge Tracing</li>
+                                <li>Data analysis and dashboard creation</li>
+                                <li>AI lectures and mentoring</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                    <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                        <span class="text-accent font-medium">2019 — 2024</span>
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2025.08 — 2025.10</span>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <h4 class="text-lg font-semibold text-primary">Instructor</h4>
+                        <p class="text-secondary">MetaCode</p>
+                        <div class="mt-4 text-secondary">
+                            <ul class="list-disc pl-5 text-sm space-y-1">
+                                <li>Instructional design and lecturing on AI automation and data analysis</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="md:w-3/4">
-                        <div class="group bg-gray-50 rounded-md p-4">
-                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                                <div>
-                                    <h4 class="text-lg font-semibold text-primary">B.A. in Educational Technology</h4>
-                                    <p class="text-secondary">Ewha Womans University</p>
-                                </div>
-                                <a href="https://drive.google.com/file/d/1oTo-7vlRDOjzmrSEQtqaKTtS6AET4SNK/view?usp=sharing" target="_blank" 
-                                   class="text-sm font-medium transition-colors flex items-center w-fit px-3 py-1.5 rounded-md border border-transparent hover:border-[#F7BFA5]" 
-                                   style="color: #F7BFA5;">
-                                    <i class="fab fa-google-drive mr-2"></i>View Portfolio
-                                </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2022.06 — 2023.02</span>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <h4 class="text-lg font-semibold text-primary">Researcher</h4>
+                        <p class="text-secondary">Korean Educational Development Institute (KEDI) · Center for Educational Statistics</p>
+                        <ul class="mt-4 list-disc pl-5 text-sm text-secondary space-y-1">
+                            <li>Data inspection for school violence surveys and publication of statistical result reports</li>
+                            <li>Administrative support and internal document management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
+                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
+                    <span class="text-accent font-medium">2019 — 2024</span>
+                </div>
+                <div class="md:w-3/4">
+                    <div class="group bg-gray-50 rounded-md p-4">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-primary">B.A. in Educational Technology, Interdisciplinary Major in Moral and Ethics Education"</h4>
+                                <p class="text-secondary">Ewha Womans University</p>
                             </div>
+                            <a href="https://drive.google.com/file/d/1oTo-7vlRDOjzmrSEQtqaKTtS6AET4SNK/view?usp=sharing" target="_blank" 
+                            class="text-sm font-medium transition-colors flex items-center w-fit px-3 py-1.5 rounded-md border border-transparent hover:border-[#F7BFA5]" 
+                            style="color: #F7BFA5;" 
+                            onmouseover="this.style.color='#E5A689';" 
+                            onmouseout="this.style.color='#F7BFA5';">
+                                <i class="fab fa-google-drive mr-2"></i>View Portfolio
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </section>
 
     <section id="tech" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">Tech Stack</span></h2>
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">Tech Skills</span>
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3"><i class="fas fa-code text-primary mr-2"></i><h3 class="text-lg font-semibold text-primary">Languages</h3></div>
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-code text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Languages</h3>
+                    </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Python</span>
                         <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">SQL</span>
@@ -380,7 +407,10 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3"><i class="fas fa-brain text-primary mr-2"></i><h3 class="text-lg font-semibold text-primary">AI · Data</h3></div>
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-brain text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">AI · Data</h3>
+                    </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">RAG</span>
                         <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GraphDB</span>
@@ -388,10 +418,44 @@
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3"><i class="fas fa-database text-primary mr-2"></i><h3 class="text-lg font-semibold text-primary">Database</h3></div>
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-database text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Database</h3>
+                    </div>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">PostgreSQL</span>
                         <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Neo4j</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-laptop-code text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">React</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-server text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">FastAPI</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Flask</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-cloud text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">DevOps · Infrastructure</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GitHub Actions</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Docker</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">AWS (EC2/S3)</span>
                     </div>
                 </div>
             </div>
@@ -400,21 +464,24 @@
 
     <section id="certifications" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">Certifications</span></h2>
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">Certifications</span>
+            </h2>
+            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
                     <i class="fas fa-award text-2xl" style="color: #F7BFA5;"></i>
                     <div>
-                        <h4 class="font-semibold text-primary">Big Data Analysis Engineer</h4>
+                        <h4 class="font-semibold text-primary">Big Data Analytics Professional</h4>
                         <p class="text-secondary text-sm">Korea Data Agency · 2025.07</p>
                     </div>
                 </div>
                 <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
                     <i class="fas fa-chalkboard-teacher text-2xl" style="color: #F7BFA5;"></i>
                     <div>
-                        <h4 class="font-semibold text-primary">NCS Certified Instructor</h4>
-                        <p class="text-secondary text-sm">MOEL · 2025.07</p>
-                    </div>
+                        <h4 class="font-semibold text-primary">NCS Vocational Training Instructor<br>(IT Development, Artificial Intelligence, IT Strategy/Planning)</h4>
+                        <p class="text-secondary text-sm">Ministry of Employment and Labor · 2025.07</p>
+                    </div>  
                 </div>
                 <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
                     <i class="fab fa-aws text-2xl" style="color: #F7BFA5;"></i>
@@ -423,92 +490,182 @@
                         <p class="text-secondary text-sm">AWS · 2025.02</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="awards" class="py-16 bg-white scroll-mt-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">Awards</span></h2>
-            <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 flex flex-col md:flex-row items-center gap-6">
-                <div class="hidden md:flex w-20 h-20 items-center justify-center rounded-full bg-orange-50 shrink-0">
-                    <i class="fas fa-trophy text-3xl" style="color: #F7BFA5;"></i>
-                </div>
-                <div class="flex-1">
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                        <h4 class="text-xl font-bold text-primary">6th Educational Public Data Contest - Excellence Award</h4>
-                        <span class="text-xs font-medium px-2 py-1 rounded bg-orange-50 text-orange-400 border border-orange-100 w-fit">2024.08</span>
+                
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
+                    <i class="fas fa-database text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">SQL Developer (SQLD)</h4>
+                        <p class="text-secondary text-sm">Korea Data Agency · 2024.06</p>
                     </div>
-                    <p class="text-secondary text-sm">Developed an AI support service for special education students using GPT fine-tuning and RAG.</p>
                 </div>
-                <a href="https://github.com/2shin0/ThisAble_service" target="_blank" class="text-sm font-medium" style="color: #F7BFA5;">
-                    <i class="fab fa-github mr-1.5"></i>GitHub
-                </a>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-16 bg-white scroll-mt-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="awards" class="py-16 bg-white scroll-mt-24"> <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">Awards</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 gap-6">
+                <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 transition-all hover:shadow-md flex flex-col md:flex-row items-center gap-6 group">
+                    
+                    <div class="hidden md:flex w-20 h-20 items-center justify-center rounded-full shrink-0" style="background: linear-gradient(135deg, #fff5f0 0%, #ffe0d1 100%);">
+                        <i class="fas fa-trophy text-3xl group-hover:scale-110 transition-transform duration-300" style="color: #F7BFA5;"></i>
+                    </div>
+
+                    <div class="flex-1">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                            <h4 class="text-xl font-bold text-primary">Excellence Award, 6th Educational Public Data Utilization Contest</h4>
+                            <span class="text-xs font-medium px-2 py-1 rounded bg-orange-50 text-orange-400 border border-orange-100 w-fit">2024.08</span>
+                        </div>
+                        <p class="text-secondary text-sm font-medium mb-2">Korea Foundation for the Advancement of Science and Creativity</p>
+                        <p class="text-secondary text-sm leading-relaxed">
+                            Developed an AI support service for special education students utilizing GPT fine-tuning, Prompt Engineering, and RAG
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="https://github.com/2shin0/ThisAble_service" target="_blank" class="text-sm transition-colors flex items-center" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
+                            <i class="fab fa-github mr-1.5"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white scroll-mt-24"> <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">Projects</span></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
                 <div class="bg-gray-50 rounded-lg overflow-hidden transition-shadow hover:shadow-md">
-                    <div class="h-48 overflow-hidden"><img src="../contents/genie-thumbnail.png" alt="Genie" class="w-full h-full object-cover"></div>
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/genie-thumbnail.png" alt="Genie Project" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary mb-2">Genie</h3>
-                        <p class="text-secondary text-sm mb-4">Platform for automated generation of CSAT Korean passages and questions using Google Gemini AI.</p>
-                        <p class="text-xs text-accent"><strong>Tech:</strong> Python, FastAPI</p>
+                        <p class="text-secondary mb-4">A platform that automatically generates Korean passages and questions for the Korean SAT using Google Gemini AI. An API service that increases content creation efficiency in the educational field.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2"><strong>Role:</strong> Planning & API Development</p>
+                            <p class="text-sm text-accent"><strong>Tech:</strong> Python, FastAPI</p>
+                        </div>
                     </div>
                 </div>
+
                 <div class="bg-gray-50 rounded-lg overflow-hidden transition-shadow hover:shadow-md">
-                    <div class="h-48 overflow-hidden"><img src="../contents/mathchat-thumbnail.jpg" alt="Math Chatbot" class="w-full h-full object-cover"></div>
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/mathchat-thumbnail.jpg" alt="Math Chatbot" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary mb-2">Math Chatbot</h3>
-                        <p class="text-secondary text-sm mb-4">AI tutor providing step-by-step math problem solving using RAG technology.</p>
-                        <p class="text-xs text-accent"><strong>Tech:</strong> Flask, OpenAI GPT-4, FAISS</p>
+                        <p class="text-secondary mb-4">A middle school math concept and solution chatbot utilizing RAG technology. An AI tutor providing step-by-step solutions to learners' questions.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2"><strong>Role:</strong> Development Mentoring</p>
+                            <p class="text-sm text-accent"><strong>Tech:</strong> Flask, OpenAI GPT-4, FAISS</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/2shin0/ai-math-courseware" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
+
                 <div class="bg-gray-50 rounded-lg overflow-hidden transition-shadow hover:shadow-md">
-                    <div class="h-48 overflow-hidden"><img src="../contents/coursemath-thumbnail.png" alt="CosMath" class="w-full h-full object-cover"></div>
+                    <div class="h-48 overflow-hidden">
+                        <img src="contents/coursemath-thumbnail.png" alt="CosMath" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary mb-2">CosMath</h3>
-                        <p class="text-secondary text-sm mb-4">Personalized elementary math AI courseware applying KSM and IRT theories.</p>
-                        <p class="text-xs text-accent"><strong>Tech:</strong> React, TypeScript</p>
+                        <p class="text-secondary mb-4">Elementary math AI courseware applying KSM and IRT theories. Provides a personalized learning experience through adaptive assessment and knowledge map visualization.</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-accent mb-2"><strong>Role:</strong> Frontend & Backend Development</p>
+                            <p class="text-sm text-accent"><strong>Tech:</strong> React, TypeScript</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/2shin0/pm7_math_chatbot" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
+                                <i class="fab fa-github mr-1"></i>GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
 
+    <!-- Lectures Section -->
     <section id="lectures" class="py-16 bg-white scroll-mt-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-primary mb-10"><span class="relative inline-block highlight-accent">Lectures</span></h2>
-            <div class="overflow-x-auto rounded-xl border border-gray-200 mb-12">
+
+            <!-- Lecture Table -->
+            <div class="overflow-x-auto rounded-xl border border-gray-200 mb-12 shadow-sm">
                 <table class="w-full lecture-table">
                     <thead>
-                        <tr><th>Target</th><th>Topic</th><th>Type</th><th>Note</th></tr>
+                        <tr>
+                            <th>Target Audience</th>
+                            <th>Topic</th>
+                            <th>Format</th>
+                            <th>Note</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>KDT PM Students</td>
+                            <td class="font-medium text-primary">KDT PM Students</td>
                             <td>AI, Machine Learning, Deep Learning, Personalized Learning Process</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-orange-50 text-orange-600 border border-orange-100">Lecture</span></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Seoul Nat'l Univ. (M.A.)</td>
-                            <td>Implementing Teacher Assistant Chatbots based on GraphDB & GraphRAG</td>
+                            <td class="font-medium text-primary">KDT Mentoring</td>
+                            <td>Personalized Learning Courseware, Step-by-step Math Chatbot, SEL Chatbot Mentoring & Development</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-purple-50 text-purple-600 border border-purple-100">Mentoring</span></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="font-medium text-primary">Master's students in Educational Technology, SNU</td>
+                            <td>Implementation of Teacher Assistant Chatbot based on GraphDB/GraphRAG</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-blue-50 text-blue-600 border border-blue-100">Seminar</span></td>
-                            <td><button onclick="openPhotoModal('snu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;"><i class="fas fa-image"></i> View Photo</button></td>
+                            <td>
+                                <button onclick="openPhotoModal('snu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                    <i class="fas fa-image text-xs"></i> View Photo
+                                </button>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Genju Nat'l Univ. of Education</td>
-                            <td>Vibe-coding Workshops using Google Apps Script & Gemini</td>
+                            <td class="font-medium text-primary">Corporate Employees, KDT Trainees, External Participants</td>
+                            <td>Knowledge Tracing & Recommendation System EdTech Seminar</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-blue-50 text-blue-600 border border-blue-100">Seminar</span></td>
+                            <td>
+                                <button onclick="openPhotoModal('edtech-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                    <i class="fas fa-image text-xs"></i> View Photo
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-medium text-primary">Internal PMs, Jinju National University of Education Graduate Students</td>
+                            <td>Vibe Coding Workshop utilizing Google Apps Script & Gemini</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-green-50 text-green-600 border border-green-100">Workshop</span></td>
-                            <td><button onclick="openPhotoModal('cjeu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;"><i class="fas fa-image"></i> View Photo</button></td>
+                            <td>
+                                <button onclick="openPhotoModal('cjeu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                    <i class="fas fa-image text-xs"></i> View Photo
+                                </button>
+                            </td>
                         </tr>
+                        
                         <tr>
-                            <td>Kathmandu University</td>
+                            <td class="font-medium text-primary">MetaCode Students</td>
+                            <td>6-hour course on AI Agents & Data Analysis (Generative AI, No-code Automation, Vibe Coding, Agent Development)</td>
+                            <td><span class="px-2 py-0.5 rounded-full text-xs bg-orange-50 text-orange-600 border border-orange-100">Lecture</span></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td class="font-medium text-primary">Kathmandu University, Nepal</td>
                             <td>AI Project Mentoring</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-purple-50 text-purple-600 border border-purple-100">Mentoring</span></td>
                             <td></td>
@@ -517,19 +674,42 @@
                 </table>
             </div>
 
+            <!-- Lecture Samples -->
             <h3 class="text-2xl font-semibold text-primary mb-6">Lecture Samples</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://youtu.be/B-14Ksjonvk?si=ruslFGh1NLSAzutu" target="_blank" class="group block bg-white rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg">
-                    <div class="aspect-video overflow-hidden"><img src="../contents/edtech-seminar-thumbnail.jpg" alt="EdTech" class="w-full h-full object-cover"></div>
+                <a href="https://youtu.be/B-14Ksjonvk?si=ruslFGh1NLSAzutu" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="contents/edtech-seminar-thumbnail.jpg" alt="EdTech Seminar" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold text-primary mb-2">EdTech Domain & Core Tech</h3>
-                        <p class="text-secondary text-sm">Chunjae AI Center</p>
+                        <h3 class="text-lg font-semibold text-primary mb-2">EdTech Domain Expertise and Two Core Technologies</h3>
+                        <p class="text-secondary text-sm">Chunjae AI Education Center</p>
                     </div>
                 </a>
-                <a href="https://youtu.be/fvwEqWyeYj0?si=vHA2HbNnpaddNIpH" target="_blank" class="group block bg-white rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg">
-                    <div class="aspect-video overflow-hidden"><img src="../contents/mc-thumbnail.jpg" alt="No-code" class="w-full h-full object-cover"></div>
+                <a href="https://youtu.be/fvwEqWyeYj0?si=vHA2HbNnpaddNIpH" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="contents/mc-thumbnail.jpg" alt="No-code AI" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-semibold text-primary mb-2">No-code AI Automation</h3>
+                        <h3 class="text-lg font-semibold text-primary mb-2">No-code AI Automation Tools</h3>
+                        <p class="text-secondary text-sm">MetaCode</p>
+                    </div>
+                </a>
+                <a href="https://youtu.be/Z3DfXuEscb0?si=K5Tx0Nn81Ucwue3R" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="contents/agent-thumbnail.jpg" alt="AI Agent" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-primary mb-2">Concept and Principles of AI Agents</h3>
+                        <p class="text-secondary text-sm">MetaCode</p>
+                    </div>
+                </a>
+                <a href="https://youtu.be/l5Hv9a42Qbs?si=c3kJnfowPP7KtP6p" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="aspect-video overflow-hidden bg-gray-100">
+                        <img src="contents/da-thumbnail.jpg" alt="Data Analysis" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-primary mb-2">Data Analysis using Generative AI</h3>
                         <p class="text-secondary text-sm">MetaCode</p>
                     </div>
                 </a>
@@ -537,16 +717,30 @@
         </div>
     </section>
 
-    <footer class="text-white py-8" style="background-color: #2d3748;">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p>&copy; 2026 Shin Young Lee. All rights reserved.</p>
+    <!-- Footer -->
+    <!-- <footer class="text-white py-8" style="background-color: #2d3748;">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2026 이신영 · Shin Young Lee. All rights reserved.</p>
         </div>
-    </footer>
+    </footer> -->
 
+    <!-- Award Detail Modal -->
+    <div class="award-modal-overlay" id="awardModalOverlay" onclick="closeAwardModal(event)">
+        <div class="award-modal" id="awardModalContent">
+            <button onclick="closeAwardModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+            <div id="awardModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Lecture Photo Modal -->
     <div class="photo-modal-overlay" id="photoModalOverlay" onclick="closePhotoModal(event)">
         <div class="photo-modal">
-            <button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white"><i class="fas fa-times text-xl"></i></button>
-            <img id="photoModalImg" src="" alt="Lecture" class="w-full rounded-lg" />
+            <button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <img id="photoModalImg" src="" alt="Lecture Photo" class="w-full rounded-lg" />
             <p id="photoModalCaption" class="text-white text-center mt-3 text-sm"></p>
         </div>
     </div>
@@ -562,15 +756,67 @@
             const menu = document.getElementById('mobile-menu');
             if (btn && menu) {
                 btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-                menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+                menu.querySelectorAll('a').forEach(a =>
+                    a.addEventListener('click', () => menu.classList.add('hidden'))
+                );
             }
         });
 
-        const photoData = {
-            "cjeu-seminar": { src: '../contents/cjeu-seminar.jpg', caption: 'CJEU Seminar' },
-            "edtech-seminar": { src: '../contents/edtech-seminar.jpg', caption: 'EdTech Seminar' },
-            "snu-seminar": { src: '../contents/snu-seminar.jpg', caption: 'SNU Seminar' }
+        // Award Modal Data
+        const awardData = {
+            award1: {
+                title: 'Excellence Award, 6th Educational Public Data Utilization Contest',
+                org: 'Korea Foundation for the Advancement of Science and Creativity · 2024.08',
+                description: 'Developed an AI support service for special education students using GPT Fine-tuning, Prompt Engineering, and RAG. Started by analyzing actual data from special education fields to define support needs per student and designing an appropriate structure.',
+                tags: ['GPT Fine-tuning', 'Prompt Engineering', 'RAG', 'Special Education'],
+                github: null,
+                link: null
+            }
         };
+
+        // Lecture Photo Data - Replace with actual photo paths
+        const photoData = {
+            "cjeu-seminar": {
+                src: 'contents/cjeu-seminar.jpg',
+                caption: 'cjeu seminar'
+            },
+            "edtech-seminar": {
+                src: 'contents/edtech-seminar.jpg',
+                caption: 'edtech seminar'
+            },
+            "snu-seminar": {
+                src: 'contents/snu-seminar.jpg',
+                caption: 'snu seminar'
+            }
+        };
+
+        function openAwardModal(id) {
+            const data = awardData[id];
+            if (!data) return;
+            const body = document.getElementById('awardModalBody');
+            body.innerHTML = `
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fas fa-medal text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h3 class="text-lg font-bold text-primary">${data.title}</h3>
+                        <p class="text-secondary text-sm">${data.org}</p>
+                    </div>
+                </div>
+                <p class="text-secondary text-sm leading-relaxed mb-4">${data.description}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${data.tags.map(t => `<span class="px-2 py-1 rounded-full bg-orange-50 text-orange-600 border border-orange-100 text-xs">${t}</span>`).join('')}
+                </div>
+                ${data.github ? `<a href="${data.github}" target="_blank" class="inline-flex items-center gap-2 text-sm mr-4" style="color: #F7BFA5;"><i class="fab fa-github"></i> GitHub</a>` : ''}
+                ${data.link ? `<a href="${data.link}" target="_blank" class="inline-flex items-center gap-2 text-sm" style="color: #F7BFA5;"><i class="fas fa-external-link-alt"></i> Link</a>` : ''}
+            `;
+            document.getElementById('awardModalOverlay').classList.add('active');
+        }
+
+        function closeAwardModal(event) {
+            if (!event || event.target === document.getElementById('awardModalOverlay') || !event.target) {
+                document.getElementById('awardModalOverlay').classList.remove('active');
+            }
+        }
 
         function openPhotoModal(id) {
             const data = photoData[id];
@@ -586,8 +832,12 @@
             }
         }
 
+        // Close modal with ESC key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closePhotoModal();
+            if (e.key === 'Escape') {
+                closeAwardModal();
+                closePhotoModal();
+            }
         });
     </script>
 </body>
