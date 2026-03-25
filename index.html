@@ -170,7 +170,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="block py-2 text-secondary hover:text-primary">홈</a>
                     <a href="#experience" class="block py-2 text-secondary hover:text-primary">경험</a>
-                    <a href="#tech-stack" class="block py-2 text-secondary hover:text-primary">기술</a>
+                    <a href="#tech" class="block py-2 text-secondary hover:text-primary">기술</a>
                     <a href="#certifications" class="block py-2 text-secondary hover:text-primary">자격</a>
                     <a href="#awards" class="block py-2 text-secondary hover:text-primary">수상</a>
                     <a href="#projects" class="block py-2 text-secondary hover:text-primary">프로젝트</a>
@@ -190,7 +190,7 @@
             <div class="px-4 py-2 space-y-2">
                 <a href="#home" class="block py-2 text-secondary hover:text-primary">홈</a>
                 <a href="#experience" class="block py-2 text-secondary hover:text-primary">경험</a>
-                <a href="#tech-stack" class="block py-2 text-secondary hover:text-primary">기술</a>
+                <a href="#tech" class="block py-2 text-secondary hover:text-primary">기술</a>
                 <a href="#certifications" class="block py-2 text-secondary hover:text-primary">자격</a>
                 <a href="#awards" class="block py-2 text-secondary hover:text-primary">수상</a>
                 <a href="#projects" class="block py-2 text-secondary hover:text-primary">프로젝트</a>
@@ -207,76 +207,79 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 bg-white">
+<section id="home" class="pt-24 pb-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                <div class="md:w-2/3 mb-8 md:mb-0">
-                    <!-- 수정 1: 헤드라인 변경 -->
-                    <p class="text-xl text-accent mb-6">데이터로 사람을 읽고, 기술로 구조를 만듭니다</p>
-                    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">
-                        안녕하세요,
-                        <span class="relative inline-block highlight-accent">이신영</span>입니다
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-12">
+                <div class="md:w-2/3">
+                    <p class="text-xl text-accent mb-6 font-medium">데이터로 사람을 읽고, 기술로 구조를 만듭니다</p>
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                        안녕하세요, <span class="relative inline-block highlight-accent">이신영</span>입니다
                     </h1>
-
-                    <!-- 수정 2: 소개 문구 변경 -->
-                    <div class="mb-6">
-                        <p class="text-lg text-secondary mb-2 leading-relaxed font-medium">기술과 사람의 간극을 좁히는 Bridge Builder</p>
-                        <p class="text-base text-secondary mb-4 leading-relaxed">
-                            교육공학이라는 인문학적 토대 위에 AI 개발이라는 기술적 도구를 더해<br>
-                            사람의 성장을 돕는 디지털 서비스를 만듭니다.<br>
-                            유저의 경험과 조직의 성장을 고려한 최적의 솔루션을 고민합니다.
-                        </p>
-
-                        <!-- How I build the bridge -->
-                        <div class="bg-gray-50 rounded-xl p-5 mb-4">
-                            <p class="text-xs font-semibold text-primary mb-3 tracking-widest uppercase">How I Build the Bridge</p>
-                            <div class="flex flex-col sm:flex-row gap-3 mb-3">
-                                <div class="flex-1 bg-white rounded-lg p-4 border border-gray-100">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <i class="fas fa-users text-sm" style="color: #F7BFA5;"></i>
-                                        <span class="text-xs font-semibold text-primary">Human Side</span>
-                                    </div>
-                                    <p class="text-xs text-secondary leading-relaxed">교육공학적 설계를 바탕으로 사용자 경험(UX)과 성과를 극대화하는 기획 및 비즈니스 솔루션 제시</p>
-                                </div>
-                                <div class="flex-1 bg-white rounded-lg p-4 border border-gray-100">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <i class="fas fa-code text-sm" style="color: #F7BFA5;"></i>
-                                        <span class="text-xs font-semibold text-primary">Tech Side</span>
-                                    </div>
-                                    <p class="text-xs text-secondary leading-relaxed">Python 기반 데이터 분석 및 맞춤형 AI 솔루션 구축</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bridge-tag text-xs" style="border-color: #F7BFA5; color: #4a5568;">
-                                    <i class="fas fa-layer-group text-xs" style="color: #F7BFA5;"></i> Domain: EdTech
-                                </span>
-                                <span class="bridge-tag text-xs" style="border-color: #F7BFA5; color: #4a5568;">
-                                    <i class="fas fa-people-arrows text-xs" style="color: #F7BFA5;"></i> HR Tech
-                                </span>
-                            </div>
-
-                        <!-- Current Focus -->
-                            <div class="flex items-start gap-2 text-sm text-secondary pt-4 border-t border-gray-200">
-                                <i class="fas fa-circle-dot mt-0.5 text-xs" style="color: #F7BFA5;"></i>
-                                <span><span class="font-semibold text-primary">Current Focus</span> — 데이터 기반 HR 솔루션 및 교수설계 기반 AI 서비스 기획 및 개발</span>
-                            </div>
-                        </div>
-
+                    <p class="text-lg text-secondary mb-4 leading-relaxed font-medium">기술과 사람의 간극을 좁히는 Bridge Builder</p>
+                    <p class="text-base text-secondary leading-relaxed mb-8">
+                        교육공학이라는 인문학적 토대 위에 AI 개발이라는 기술적 도구를 더해 사람의 성장을 돕는 디지털 서비스를 만듭니다.<br>
+                        유저의 경험과 조직의 성장을 고려한 최적의 솔루션을 고민합니다.
+                    </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
+                        <a href="https://github.com/2shin0" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
                             <i class="fab fa-github mr-2"></i>GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
-                            <i class="fab fa-linkedin mr-2"></i>LinkedIn
-                        </a>
-                        <a href="mailto:02.shin.00@gmail.com" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;" onmouseover="this.style.backgroundColor='#F7BFA5'; this.style.color='white';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#F7BFA5';">
+                        <a href="mailto:02.shin.00@gmail.com" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
                             <i class="fas fa-envelope mr-2"></i>이메일
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/3 flex justify-center">
-                    <div class="w-64 h-64 overflow-hidden bg-white">
+                    <div class="w-64 h-64 overflow-hidden rounded-2xl bg-gray-50">
                         <img src="contents/profile.jpeg" alt="프로필 사진" class="w-full h-full object-contain" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-2 mb-8">
+                    <i class="fas fa-circle-dot text-xs" style="color: #F7BFA5;"></i>
+                    <span class="font-bold text-primary tracking-wider uppercase text-sm">How I Build the Bridge</span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-orange-50">
+                                <i class="fas fa-users text-lg" style="color: #F7BFA5;"></i>
+                            </div>
+                            <span class="text-lg font-bold text-primary">Human Side</span>
+                        </div>
+                        <p class="text-secondary leading-relaxed">
+                            교육공학적 설계를 바탕으로 사용자 경험(UX)과 성과를 극대화하는 기획 및 비즈니스 솔루션을 제시합니다. 
+                            사용자의 학습 흐름과 인지적 과정을 고려한 서비스를 설계합니다.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-orange-50">
+                                <i class="fas fa-code text-lg" style="color: #F7BFA5;"></i>
+                            </div>
+                            <span class="text-lg font-bold text-primary">Tech Side</span>
+                        </div>
+                        <p class="text-secondary leading-relaxed">
+                            Python 기반의 데이터 분석과 LLM, GraphDB 등 최신 기술을 활용하여 맞춤형 AI 솔루션을 구축합니다. 
+                            이론적 모델을 실제 작동하는 서비스로 구현해냅니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <span class="bridge-tag bg-white" style="border-color: #F7BFA5; color: #4a5568;"><i class="fas fa-layer-group" style="color: #F7BFA5;"></i> Domain: EdTech</span>
+                    <span class="bridge-tag bg-white" style="border-color: #F7BFA5; color: #4a5568;"><i class="fas fa-people-arrows" style="color: #F7BFA5;"></i> HR Tech</span>
+                </div>
+
+                <div class="pt-8 border-t border-gray-200">
+                    <div class="flex items-start gap-3 text-secondary">
+                        <i class="fas fa-bullseye mt-1" style="color: #F7BFA5;"></i>
+                        <span class="text-base">
+                            <span class="font-bold text-primary">Current Focus</span> — 데이터 기반 HR 솔루션 및 교수설계 기반 AI 서비스 기획 및 개발에 집중하고 있습니다.
+                        </span>
                     </div>
                 </div>
             </div>
@@ -365,9 +368,10 @@
                 </div>
             </div>
 
-        <div id="tech-stack" class="pt-16 mb-20">
+    <section id="tech" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-primary mb-12">
-                <span class="relative inline-block highlight-accent">기술 스택</span>
+                <span class="relative inline-block highlight-accent">기술</span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
@@ -402,8 +406,38 @@
                         <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Neo4j</span>
                     </div>
                 </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-laptop-code text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">React</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">HTML/CSS</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-server text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">FastAPI</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Flask</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-cloud text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">DevOps · Infrastructure</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GitHub Actions</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Docker</span>
+                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">AWS (EC2/S3)</span>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -546,7 +580,7 @@
     <!-- 수정 5: 강의 섹션 구조화 + 네팔 카트만두 추가 + 사진 모달 -->
     <section id="lectures" class="py-16 bg-white scroll-mt-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-10"><span class="relative inline-block highlight-accent">강의 활동</span></h2>
+            <h2 class="text-3xl font-bold text-primary mb-10"><span class="relative inline-block highlight-accent">강의</span></h2>
 
             <!-- 강의 테이블 -->
             <div class="overflow-x-auto rounded-xl border border-gray-200 mb-12 shadow-sm">
