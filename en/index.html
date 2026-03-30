@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -20,7 +20,7 @@
                         'sub-accent': '#FBE4D6'
                     },
                     fontFamily: {
-                        'sans': ['Noto Sans KR', 'sans-serif'],
+                        'sans': ['Inter', 'sans-serif'],
                     }
                 }
             }
@@ -80,7 +80,6 @@
         }
         .lang-sep { color: #CBD5E0; font-size: 11px; }
 
-        /* Bridge builder tag styles */
         .bridge-tag {
             display: inline-flex;
             align-items: center;
@@ -92,7 +91,6 @@
             border: 1.5px solid;
         }
 
-        /* Award modal */
         .award-modal-overlay {
             display: none;
             position: fixed;
@@ -116,7 +114,6 @@
             overflow-y: auto;
         }
 
-        /* Photo modal */
         .photo-modal-overlay {
             display: none;
             position: fixed;
@@ -135,7 +132,6 @@
             position: relative;
         }
 
-        /* Lecture table */
         .lecture-table th {
             background-color: #f7f7f7;
             font-weight: 600;
@@ -158,9 +154,9 @@
         .lecture-table tr:hover td {
             background-color: #fafafa;
         }
-    </style>      
+    </style>
 </head>
-  
+
 <body class="text-gray-800 font-sans" style="background-color: #FAFAFA;">
     <!-- Navigation -->
     <nav class="sticky top-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
@@ -170,15 +166,15 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="block py-2 text-secondary hover:text-primary">Home</a>
                     <a href="#experience" class="block py-2 text-secondary hover:text-primary">Experience</a>
-                    <a href="#tech" class="block py-2 text-secondary hover:text-primary">Tech</a>
+                    <a href="#tech" class="block py-2 text-secondary hover:text-primary">Skills</a>
                     <a href="#certifications" class="block py-2 text-secondary hover:text-primary">Certifications</a>
                     <a href="#awards" class="block py-2 text-secondary hover:text-primary">Awards</a>
                     <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
-                    <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Lectures</a>
+                    <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Teaching</a>
                     <div class="lang-toggle">
-                        <a href="#" class="active">EN</a>
-                        <span class="lang-sep">/</span>
                         <a href="../">KO</a>
+                        <span class="lang-sep">/</span>
+                        <a href="#" class="active">EN</a>
                     </div>
                 </div>
                 <button class="md:hidden text-secondary" id="mobile-menu-btn">
@@ -190,16 +186,16 @@
             <div class="px-4 py-2 space-y-2">
                 <a href="#home" class="block py-2 text-secondary hover:text-primary">Home</a>
                 <a href="#experience" class="block py-2 text-secondary hover:text-primary">Experience</a>
-                <a href="#tech" class="block py-2 text-secondary hover:text-primary">Tech</a>
+                <a href="#tech" class="block py-2 text-secondary hover:text-primary">Skills</a>
                 <a href="#certifications" class="block py-2 text-secondary hover:text-primary">Certifications</a>
                 <a href="#awards" class="block py-2 text-secondary hover:text-primary">Awards</a>
                 <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
-                <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Lectures</a>
+                <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Teaching</a>
                 <div class="py-2 border-t border-gray-100">
                     <div class="lang-toggle">
-                        <a href="#" class="active">EN</a>
-                        <span class="lang-sep">/</span>
                         <a href="../">KO</a>
+                        <span class="lang-sep">/</span>
+                        <a href="#" class="active">EN</a>
                     </div>
                 </div>
             </div>
@@ -211,89 +207,32 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-12 mb-12">
                 <div class="md:w-2/3">
-                    <p class="text-xl text-accent mb-6 font-medium">Understanding people through data, building solutions with technology</p>
+                    <p class="text-xl text-accent mb-6 font-medium">Understanding people through data, building structure through technology.</p>
                     <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
-                        Hello, I'm <span class="relative inline-block highlight-accent">Shin Young Lee</span>
+                        Hi, I'm <span class="relative inline-block highlight-accent">Shin Young Lee</span>.
                     </h1>
-                    <p class="text-lg text-secondary mb-4 leading-relaxed font-medium">A Bridge Builder narrowing the gap between technology and people</p>
+                    <p class="text-lg text-secondary mb-4 leading-relaxed font-medium">A Bridge Builder closing the gap between technology and people</p>
                     <p class="text-base text-secondary leading-relaxed mb-8">
-                        Bridging educational technology and AI to build digital services that foster human growth.<br>
-                        Designing optimal solutions that balance user experience with organizational success.
+                        Combining a foundation in Educational Technology with hands-on AI development,<br>
+                        I design solutions that put user experience and organizational growth at the center.
                     </p>
                     <div class="flex flex-wrap gap-4">
+                        <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
+                            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                        </a>
+                        <a href="https://velog.io/@sobit/posts" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i>Blog
+                        </a>
                         <a href="https://github.com/2shin0" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
                             <i class="fab fa-github mr-2"></i>GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-3 rounded-lg transition-colors flex items-center" style="border: 2px solid #F7BFA5; color: #F7BFA5;">
-                            <i class="fab fa-linkedin mr-2"></i>
-                            LinkedIn
-                        </a>
-                        <a href="mailto:02.shin.00@gmail.com" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
+                        <a href="mailto:2shin0@gmail.com" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
                             <i class="fas fa-envelope mr-2"></i>Email
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/3 flex justify-center">
-                    <img src="../contents/profile.jpeg" alt="Profile Picture" class="w-64 h-64 object-contain" />
-                </div>
-            </div>
-
-            <div class="bg-gray-50 rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100">
-                <div class="flex items-center gap-2 mb-8">
-                    <i class="fas fa-circle-dot text-xs" style="color: #F7BFA5;"></i>
-                    <span class="font-bold text-primary tracking-wider uppercase text-sm">How I Build the Bridge</span>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-9 h-9 rounded-full flex items-center justify-center bg-orange-50">
-                                <i class="fas fa-users text-base" style="color: #F7BFA5;"></i>
-                            </div>
-                            <span class="text-base font-bold text-primary">Human Side</span>
-                        </div>
-                        <p class="text-sm text-secondary leading-relaxed">
-                            Based on educational technology design, I propose planning and business solutions that maximize user experience (UX) and performance. 
-                            I design services considering the user's learning flow and cognitive processes.
-                        </p>
-                    </div>
-
-                    <div class="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-9 h-9 rounded-full flex items-center justify-center bg-orange-50">
-                                <i class="fas fa-code text-base" style="color: #F7BFA5;"></i>
-                            </div>
-                            <span class="text-base font-bold text-primary">Tech Side</span>
-                        </div>
-                        <p class="text-sm text-secondary leading-relaxed">
-                            Utilizing the latest technologies such as Python-based data analysis, LLMs, and GraphDB, I build custom AI solutions. 
-                            I implement theoretical models into actual, working services.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="mb-10">
-                    <div class="flex items-center gap-2 mb-4">
-                        <i class="fas fa-circle-dot text-xs" style="color: #F7BFA5;"></i>
-                        <span class="font-bold text-primary tracking-wider uppercase text-sm">Domain</span>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bridge-tag bg-white" style="border-color: #F7BFA5; color: #4a5568;">
-                            <i class="fas fa-layer-group" style="color: #F7BFA5;"></i> EdTech
-                        </span>
-                        <span class="bridge-tag bg-white" style="border-color: #F7BFA5; color: #4a5568;">
-                            <i class="fas fa-people-arrows" style="color: #F7BFA5;"></i> HR Tech
-                        </span>
-                    </div>
-                </div>
-
-                <div class="pt-8">
-                    <div class="flex items-center gap-3 text-secondary">
-                        <i class="fas fa-circle-dot text-xs" style="color: #F7BFA5;"></i>
-                        <span class="text-base">
-                            <span class="font-bold text-primary">Current Focus:</span> Planning and developing data-driven HR solutions and instructional design-based AI services.
-                        </span>
-                    </div>
+                    <img src="../contents/profile.jpeg" alt="Profile photo" class="w-64 h-64 object-contain" />
                 </div>
             </div>
         </div>
@@ -301,232 +240,652 @@
 
     <!-- Experience Section -->
     <section id="experience" class="py-16 bg-white scroll-mt-24">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <h2 class="text-3xl font-bold text-primary mb-12">
-            <span class="relative inline-block highlight-accent">Education & Experience</span>
-        </h2>
-        
-        <div class="space-y-6 mb-20">
-            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                    <span class="text-accent font-medium">2024.06 — 2025.09</span>
-                </div>
-                <div class="md:w-3/4">
-                    <div class="group bg-gray-50 rounded-md p-4">
-                        <h4 class="text-lg font-semibold text-primary">AI Learning Experience Designer</h4>
-                        <p class="text-secondary">Chunjae Education · Digital Learning Division, Digital Education Team</p>
-                        <div class="mt-4 text-secondary">
-                            <ul class="list-disc pl-5 text-sm space-y-1">
-                                <li>PoC/MVP development using Knowledge Tracing, GraphDB, and Generative AI</li>
-                                <li>Developed an API service for automatic generation of CSAT Korean passages and questions through GPT fine-tuning and LLM benchmarking</li>
-                                <li>Developed math courseware MVP based on IRT and Deep Knowledge Tracing</li>
-                                <li>Data analysis and dashboard creation</li>
-                                <li>AI lectures and mentoring</li>
-                            </ul>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">Education & Experience</span>
+            </h2>
+
+            <div class="space-y-6">
+
+                <!-- Chunjae Education -->
+                <div class="border-l-4 border-primary pl-6">
+                    <div class="bg-gray-50 rounded-md p-5">
+                        <p class="text-sm text-accent font-medium mb-1">Jun 2024 — Sep 2025</p>
+                        <h4 class="text-lg font-semibold text-primary">AI Service Developer</h4>
+                        <p class="text-secondary text-sm mb-4">Chunjae Education · Digital Learning Division</p>
+                        <ul class="list-disc pl-5 text-sm text-secondary space-y-1 mb-4">
+                            <li>PoC and MVP development using Knowledge Tracing, GraphDB, and generative AI</li>
+                            <li>Developed an API service for automated Korean college entrance exam (CSAT) Korean passage and question generation via GPT fine-tuning and LLM benchmarking</li>
+                            <li>Built a math courseware MVP based on IRT and Deep Knowledge Tracing</li>
+                            <li>Data analysis and dashboard creation</li>
+                            <li>AI lectures and mentoring</li>
+                        </ul>
+
+                        <!-- Related Projects -->
+                        <div class="mt-5 pt-4 border-t border-gray-200">
+                            <p class="text-xs font-medium text-primary mb-3 tracking-wide uppercase">Related Projects</p>
+                            <div class="space-y-3">
+
+                                <!-- Genie -->
+                                <div class="bg-white rounded-lg border border-gray-100 p-4">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h5 class="font-semibold text-primary text-base">Genie</h5>
+                                        <span class="text-sm text-secondary">Feb 2025 – Sep 2025</span>
+                                    </div>
+                                    <p class="text-sm text-secondary mb-3">AI-powered platform for automated CSAT Korean passage and question generation</p>
+                                    <div class="flex gap-4">
+                                        <div class="shrink-0 flex flex-col gap-2">
+                                            <img src="../contents/genie-thumbnail.png" alt="Genie" class="w-80 h-52 object-cover rounded">
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-secondary mb-2">
+                                                <span class="font-medium text-primary">Role</span>&nbsp; Planning & API Development
+                                            </p>
+                                            <div class="flex flex-col gap-2 mb-3">
+                                                <div>
+                                                    <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">Problem</p>
+                                                    <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>High cost and time burden in creating passages and questions for exam prep workbooks</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
+                                                    <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Comparative evaluation of Claude, Gemini, GPT, and DeepSeek — blind testing with domain experts based on format (paragraph structure, sentence length, punctuation) and content quality</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Training data construction and GPT fine-tuning</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Prompt design based on 3-year CSAT question analysis; built an automated generation pipeline using a Gemini multi-agent system</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Iterative feedback cycles with the content team to refine generation quality</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">Outcome</p>
+                                                    <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Reduced question creation and review time from several days to 1 hour</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Completed PoC; concluded before full production rollout</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Python</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">FastAPI</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Figma</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Fine-tuning</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Prompt Engineering</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">RAG</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CosMath -->
+                                <div class="bg-white rounded-lg border border-gray-100 p-4">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h5 class="font-semibold text-primary text-base">CosMath</h5>
+                                        <span class="text-sm text-secondary">Nov 2024 – Jan 2025</span>
+                                    </div>
+                                    <p class="text-sm text-secondary mb-3">AI-powered adaptive learning system for elementary school math</p>
+                                    <div class="flex gap-4">
+                                        <div class="shrink-0 flex flex-col gap-2">
+                                            <img src="../contents/coursemath-thumbnail.png" alt="CosMath" class="w-80 h-52 object-cover rounded">
+                                            <a href="https://github.com/2shin0/ai-math-courseware" target="_blank"
+                                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
+                                                <i class="fab fa-github"></i> GitHub
+                                            </a>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-secondary mb-2">
+                                                <span class="font-medium text-primary">Role</span>&nbsp; IRT & CAT logic design and implementation, frontend development
+                                            </p>
+                                            <div class="flex flex-col gap-2 mb-3">
+                                                <div>
+                                                    <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">Problem</p>
+                                                    <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Existing service gave all students the same assessment, failing to account for individual learning levels</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Learning recommendations were provided, but students had no visibility into their own level or what prerequisite/follow-up topics to study</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
+                                                    <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Designed and implemented IRT- and CAT-based adaptive assessment to dynamically serve questions matched to each student's level</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Visualized prerequisite and follow-up concept relationships as a knowledge map, giving students a clear view of where they are and what to study next</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">Outcome</p>
+                                                    <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Delivered personalized learning recommendations and knowledge map visualization (PoC complete)</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">React</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">TypeScript</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Tailwind CSS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Similarity Chatbot -->
+                                <div class="bg-white rounded-lg border border-gray-100 p-4">
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h5 class="font-semibold text-primary text-base">Similarity-based Learning Chatbot Improvement</h5>
+                                        <span class="text-sm text-secondary">Aug 2024</span>
+                                    </div>
+                                    <p class="text-sm text-secondary mb-3">Accuracy improvement for an in-house similarity-based learning chatbot for elementary students</p>
+                                    <div class="flex gap-4">
+                                        <div class="shrink-0 flex flex-col gap-2">
+                                            <img src="../contents/mathchat-thumbnail.jpg" alt="Chatbot" class="w-80 h-52 object-cover rounded">
+                                            <a href="https://velog.io/@sobit/Langchain-%EC%95%99%EC%83%81%EB%B8%94%EB%AA%A8%EB%8D%B8-%E3%85%A3-%EA%B4%9C%EC%B0%AE%EC%9D%80-%EC%9C%A0%EC%82%AC%EB%8F%84-%ED%95%99%EC%8A%B5-%EC%B1%97%EB%B4%87-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC-%EB%B6%84%EB%A5%98%EA%B9%8C%EC%A7%80" target="_blank"
+                                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
+                                                <i class="fas fa-external-link-alt"></i> Blog
+                                            </a>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm text-secondary mb-2">
+                                                <span class="font-medium text-primary">Role</span>&nbsp; Planning & Development
+                                            </p>
+                                            <div class="flex flex-col gap-2 mb-3">
+                                                <div>
+                                                    <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">Problem</p>
+                                                    <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Low response accuracy in the existing keyword-based chatbot leading to poor engagement</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Generative AI could not be introduced due to hallucination concerns for a service targeting elementary students</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>A gap existed between the business goal (increasing users) and the root cause (chatbot performance), with no one bridging them</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
+                                                    <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Analyzed Q&A data to identify the root cause; proposed adopting a keyword + embedding ensemble model</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Built and validated an open-source similarity ensemble model</span></li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">Outcome</p>
+                                                    <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                                        <li class="flex gap-1"><span>•</span><span>Confirmed 20%+ accuracy improvement on frequently asked student questions; concluded at the proposal stage</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-wrap gap-1">
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Transformers</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Langchain</span>
+                                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">FAISS</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                    <span class="text-accent font-medium">2025.08 — 2025.10</span>
-                </div>
-                <div class="md:w-3/4">
-                    <div class="group bg-gray-50 rounded-md p-4">
+                <!-- MetaCode -->
+                <div class="border-l-4 border-primary pl-6">
+                    <div class="bg-gray-50 rounded-md p-5">
+                        <p class="text-sm text-accent font-medium mb-1">Aug 2025 — Oct 2025</p>
                         <h4 class="text-lg font-semibold text-primary">Instructor</h4>
-                        <p class="text-secondary">MetaCode</p>
-                        <div class="mt-4 text-secondary">
-                            <ul class="list-disc pl-5 text-sm space-y-1">
-                                <li>Instructional design and lecturing on AI automation and data analysis</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                    <span class="text-accent font-medium">2022.06 — 2023.02</span>
-                </div>
-                <div class="md:w-3/4">
-                    <div class="group bg-gray-50 rounded-md p-4">
-                        <h4 class="text-lg font-semibold text-primary">Researcher</h4>
-                        <p class="text-secondary">Korean Educational Development Institute (KEDI) · Center for Educational Statistics</p>
-                        <ul class="mt-4 list-disc pl-5 text-sm text-secondary space-y-1">
-                            <li>Data inspection for school violence surveys and publication of statistical result reports</li>
-                            <li>Administrative support and internal document management</li>
+                        <p class="text-secondary text-sm mb-4">MetaCode</p>
+                        <ul class="list-disc pl-5 text-sm text-secondary space-y-1">
+                            <li>Instructional design and delivery for AI automation and data analysis courses</li>
                         </ul>
                     </div>
                 </div>
-            </div>
 
-            <div class="flex flex-col md:flex-row md:items-start border-l-4 border-primary pl-6">
-                <div class="md:w-1/4 mb-2 md:mb-0 pt-4">
-                    <span class="text-accent font-medium">2019 — 2024</span>
-                </div>
-                <div class="md:w-3/4">
-                    <div class="group bg-gray-50 rounded-md p-4">
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <!-- KEDI -->
+                <div class="border-l-4 border-primary pl-6">
+                    <div class="bg-gray-50 rounded-md p-5">
+                        <p class="text-sm text-accent font-medium mb-1">Jun 2022 — Feb 2023</p>
+                        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                             <div>
-                                <h4 class="text-lg font-semibold text-primary">B.A. in Educational Technology, Interdisciplinary Major in Moral and Ethics Education"</h4>
-                                <p class="text-secondary">Ewha Womans University</p>
+                                <h4 class="text-lg font-semibold text-primary">Research Assistant</h4>
+                                <p class="text-secondary text-sm mb-4">Korean Educational Development Institute (KEDI) · Educational Statistics Center</p>
+                                <ul class="list-disc pl-5 text-sm text-secondary space-y-1">
+                                    <li>Published statistical report on school violence survey data</li>
+                                    <li>Event planning and coordination</li>
+                                    <li>Administrative support and document management</li>
+                                </ul>
                             </div>
-                            <a href="https://drive.google.com/file/d/1f48tCxGEIFGM_pjqD9v5J3-HMH8SCfiN/view?usp=sharing" target="_blank" 
-                            class="text-sm font-medium transition-colors flex items-center w-fit px-3 py-1.5 rounded-md border border-transparent hover:border-[#F7BFA5]" 
-                            style="color: #F7BFA5;" 
-                            onmouseover="this.style.color='#E5A689';" 
-                            onmouseout="this.style.color='#F7BFA5';">
-                                <i class="fab fa-google-drive mr-2"></i>View Portfolio
+                            <a href="https://www.kedi.re.kr/khome/main/research/selectPubForm.do?plNum0=15181" target="_blank"
+                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
+                                <i class="fas fa-file-alt"></i> Publication
                             </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Ewha -->
+                <div class="border-l-4 border-primary pl-6">
+                    <div class="bg-gray-50 rounded-md p-5">
+                        <p class="text-sm text-accent font-medium mb-1">Feb 2019 — Feb 2024</p>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-primary">B.A. in Educational Technology, Minor in Ethics</h4>
+                                <p class="text-secondary text-sm">Ewha Womans University</p>
+                            </div>
+                            <a href="https://drive.google.com/file/d/1f48tCxGEIFGM_pjqD9v5J3-HMH8SCfiN/view?usp=sharing" target="_blank"
+                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
+                                <i class="fab fa-google-drive"></i> Portfolio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
     </section>
 
-    <section id="tech" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
+    <!-- Tech Section -->
+    <section id="tech" class="py-16 bg-white scroll-mt-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-primary mb-12">
-                <span class="relative inline-block highlight-accent">Tech Skills</span>
+                <span class="relative inline-block highlight-accent">Skills</span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Working Style -->
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Overall -->
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Overall</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">I design services that maximize user experience and outcomes grounded in instructional design principles, and I bring theoretical models to life as working products.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">I don't assume the newest technology is always the right choice. I believe the best solution depends on context.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">When a task demands it, I actively explore unfamiliar territory to deliver the best result. I've continuously expanded my own scope—from Python-based data analysis to LLM and GraphDB applications.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">I enjoy pushing for improvements in team processes and culture. I'm especially drawn to experience design through HR data analysis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication -->
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-comments text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Communication</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">I've frequently served as the bridge between product and engineering teams, translating requirements in a language both sides can understand.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">Through AI and data analysis lectures and mentoring—including KDT(K-Digital Training) bootcamps and international programs—I've communicated technical concepts to learners from diverse backgrounds.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">I speak up regardless of seniority or title, while staying genuinely open to being wrong.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <span class="mt-0.5 shrink-0" style="color: #F7BFA5;">•</span>
+                            <p class="text-sm text-secondary leading-relaxed">I believe over-communicating is almost always better than under-communicating, and I prioritize sharing context to reduce friction in collaboration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Row 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+                <!-- Languages -->
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
                         <i class="fas fa-code text-primary mr-2"></i>
                         <h3 class="text-lg font-semibold text-primary">Languages</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Python</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">SQL</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">JavaScript</span>
+                    <div class="space-y-4">
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">Python</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">End-to-end ownership: arXiv crawler, LLM pipeline, FastAPI server, and fine-tuning scripts—all built solo</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">SQL</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Aggregate queries for learning data analysis, query optimization for dashboard integration</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">JavaScript</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Workflow automation with Google Apps Script, basic frontend interaction</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- AI · Data -->
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3">
+                    <div class="flex items-center mb-4">
                         <i class="fas fa-brain text-primary mr-2"></i>
                         <h3 class="text-lg font-semibold text-primary">AI · Data</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">RAG</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GraphDB</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Knowledge Tracing</span>
+                    <div class="space-y-4">
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">Transformers</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Applied open-source Transformer models for similarity ensemble; benchmarked and compared multiple models</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">RAG</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Built FAISS-based math chatbot and Neo4j-integrated GraphRAG pipeline in production contexts</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">LLM Fine-tuning</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Constructed training datasets and fine-tuned GPT; designed and ran blind evaluation of Claude, Gemini, GPT, and DeepSeek</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">Knowledge Tracing</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Designed and implemented IRT/CAT-based adaptive assessment logic; developed a DKT-based courseware PoC</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Database -->
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3">
+                    <div class="flex items-center mb-4">
                         <i class="fas fa-database text-primary mr-2"></i>
                         <h3 class="text-lg font-semibold text-primary">Database</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">PostgreSQL</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Neo4j</span>
+                    <div class="space-y-4">
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">PostgreSQL</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Schema design for service databases; aggregate query writing for learning history data analysis</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">Neo4j</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Modeled prerequisite/follow-up math concept relationships as a knowledge graph; integrated with LLM-based GraphRAG pipeline</p>
+                        </div>
                     </div>
                 </div>
+
+            </div>
+
+            <!-- Skills Row 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+                <!-- Backend -->
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-laptop-code text-primary mr-2"></i>
-                        <h3 class="text-lg font-semibold text-primary">Frontend</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">React</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3">
+                    <div class="flex items-center mb-4">
                         <i class="fas fa-server text-primary mr-2"></i>
                         <h3 class="text-lg font-semibold text-primary">Backend</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">FastAPI</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Flask</span>
+                    <div class="space-y-4">
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">FastAPI</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Sole designer and developer of LLM multi-agent REST API for the Genie project</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">Flask</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Used for math chatbot backend prototyping</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Frontend -->
                 <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                    <div class="flex items-center mb-3">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-laptop-code text-primary mr-2"></i>
+                        <h3 class="text-lg font-semibold text-primary">Frontend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">React</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Sole developer of the CosMath courseware frontend in TypeScript, including knowledge map visualization</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">HTML/CSS</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Built responsive portfolio and service UIs using Tailwind CSS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps -->
+                <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                    <div class="flex items-center mb-4">
                         <i class="fas fa-cloud text-primary mr-2"></i>
                         <h3 class="text-lg font-semibold text-primary">DevOps · Infrastructure</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">GitHub Actions</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">Docker</span>
-                        <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs">AWS (EC2/S3)</span>
+                    <div class="space-y-4">
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">GitHub Actions</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Designed and currently operating a cron-based automation workflow for the LLMxiv project</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">Docker</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">Service containerization and separation of development and production environments</p>
+                        </div>
+                        <div class="border-t border-gray-100 pt-4">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-sm font-medium text-primary">AWS (EC2/S3)</span>
+                                <div class="flex gap-0.5">
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
+                                </div>
+                            </div>
+                            <p class="text-xs text-secondary leading-relaxed">EC2-based API server deployment and operations; S3 static file management</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- Certifications Section -->
     <section id="certifications" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-primary mb-12">
                 <span class="relative inline-block highlight-accent">Certifications</span>
             </h2>
-            
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
                     <i class="fas fa-award text-2xl" style="color: #F7BFA5;"></i>
                     <div>
-                        <h4 class="font-semibold text-primary">Big Data Analytics Professional</h4>
-                        <p class="text-secondary text-sm">Korea Data Agency · 2025.07</p>
+                        <h4 class="font-semibold text-primary">Big Data Analytics Engineer</h4>
+                        <p class="text-secondary text-sm">Korea Data Agency · Jul 2025</p>
                     </div>
                 </div>
                 <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
                     <i class="fas fa-chalkboard-teacher text-2xl" style="color: #F7BFA5;"></i>
                     <div>
-                        <h4 class="font-semibold text-primary">NCS Vocational Training Instructor<br>(IT Development, Artificial Intelligence, IT Strategy/Planning)</h4>
-                        <p class="text-secondary text-sm">Ministry of Employment and Labor · 2025.07</p>
-                    </div>  
+                        <h4 class="font-semibold text-primary">NCS Vocational Trainer<br>(IT Development, AI, IT Strategy & Planning)</h4>
+                        <p class="text-secondary text-sm">Ministry of Employment and Labor · Jul 2025</p>
+                    </div>
                 </div>
                 <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
                     <i class="fab fa-aws text-2xl" style="color: #F7BFA5;"></i>
                     <div>
                         <h4 class="font-semibold text-primary">AWS Certified AI Practitioner</h4>
-                        <p class="text-secondary text-sm">AWS · 2025.02</p>
+                        <p class="text-secondary text-sm">AWS · Feb 2025</p>
                     </div>
                 </div>
-                
                 <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
                     <i class="fas fa-database text-2xl" style="color: #F7BFA5;"></i>
                     <div>
                         <h4 class="font-semibold text-primary">SQL Developer (SQLD)</h4>
-                        <p class="text-secondary text-sm">Korea Data Agency · 2024.06</p>
+                        <p class="text-secondary text-sm">Korea Data Agency · Jun 2024</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="awards" class="py-16 bg-white scroll-mt-24"> <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Awards Section -->
+    <section id="awards" class="py-16 bg-white scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-primary mb-12">
                 <span class="relative inline-block highlight-accent">Awards</span>
             </h2>
-            
             <div class="grid grid-cols-1 gap-6">
-                <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 transition-all hover:shadow-md flex flex-col md:flex-row items-center gap-6 group">
-                    
+                <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 flex flex-col md:flex-row items-center gap-6">
                     <div class="hidden md:flex w-20 h-20 items-center justify-center rounded-full shrink-0" style="background: linear-gradient(135deg, #fff5f0 0%, #ffe0d1 100%);">
-                        <i class="fas fa-trophy text-3xl group-hover:scale-110 transition-transform duration-300" style="color: #F7BFA5;"></i>
+                        <i class="fas fa-trophy text-3xl" style="color: #F7BFA5;"></i>
                     </div>
-
                     <div class="flex-1">
                         <div class="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                            <h4 class="text-xl font-bold text-primary">Excellence Award, 6th Educational Public Data Utilization Contest</h4>
-                            <span class="text-xs font-medium px-2 py-1 rounded bg-orange-50 text-orange-400 border border-orange-100 w-fit">2024.08</span>
+                            <h4 class="text-xl font-bold text-primary">Excellence Award — 6th Education Public Data Utilization Contest</h4>
+                            <span class="text-xs font-medium px-2 py-1 rounded bg-orange-50 text-orange-400 border border-orange-100 w-fit">Aug 2024</span>
                         </div>
-                        <p class="text-secondary text-sm font-medium mb-2">Korea Foundation for the Advancement of Science and Creativity</p>
+                        <p class="text-secondary text-sm font-medium mb-2">Korea Foundation for the Advancement of Science & Creativity (KOFAC)</p>
                         <p class="text-secondary text-sm leading-relaxed">
-                            Developed an AI support service for special education students utilizing GPT fine-tuning, Prompt Engineering, and RAG
+                            Developed an AI support service for students with special educational needs using GPT fine-tuning, prompt engineering, and RAG
                         </p>
                     </div>
-
                     <div class="flex gap-4">
-                        <a href="https://github.com/2shin0/ThisAble_service" target="_blank" class="text-sm transition-colors flex items-center" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
-                            <i class="fab fa-github mr-1.5"></i>GitHub
+                        <a href="https://github.com/2shin0/ThisAble_service" target="_blank"
+                        class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5">
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                     </div>
                 </div>
@@ -535,62 +894,70 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white scroll-mt-24"> <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12"><span class="relative inline-block highlight-accent">Projects</span></h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="projects" class="py-16 bg-white scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">Projects</span>
+            </h2>
+            <div class="space-y-3">
 
-                <div class="bg-gray-50 rounded-lg overflow-hidden transition-shadow hover:shadow-md">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../contents/genie-thumbnail.png" alt="Genie Project" class="w-full h-full object-cover">
+                <!-- LLMxiv -->
+                <div class="bg-white rounded-lg border border-gray-100 p-4">
+                    <div class="flex items-center justify-between mb-1">
+                        <h5 class="font-semibold text-primary text-base">LLMxiv</h5>
+                        <span class="text-sm text-secondary">Jun 2025 – Sep 2025</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Genie</h3>
-                        <p class="text-secondary mb-4">A platform that automatically generates Korean passages and questions for the Korean SAT using Google Gemini AI. An API service that increases content creation efficiency in the educational field.</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-accent mb-2"><strong>Role:</strong> Planning & API Development</p>
-                            <p class="text-sm text-accent"><strong>Tech:</strong> Python, FastAPI</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg overflow-hidden transition-shadow hover:shadow-md">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../contents/mathchat-thumbnail.jpg" alt="Math Chatbot" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">Math Chatbot</h3>
-                        <p class="text-secondary mb-4">A middle school math concept and solution chatbot utilizing RAG technology. An AI tutor providing step-by-step solutions to learners' questions.</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-accent mb-2"><strong>Role:</strong> Development Mentoring</p>
-                            <p class="text-sm text-accent"><strong>Tech:</strong> Flask, OpenAI GPT-4, FAISS</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://github.com/2shin0/ai-math-courseware" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
-                                <i class="fab fa-github mr-1"></i>GitHub
+                    <p class="text-sm text-secondary mb-3">Automated newsletter service that daily crawls, summarizes, and translates AI papers from arXiv <span class="px-1.5 py-0.5 rounded-full text-xs bg-green-50 text-green-700 border border-green-100">Live</span></p>
+                    <div class="flex gap-4">
+                        <div class="shrink-0 flex flex-col gap-2">
+                            <img src="../contents/LLMxiv.png" alt="LLMxiv" class="w-80 h-52 object-cover rounded">
+                            <a href="https://github.com/2shin0/arxiv-ai-mailing" target="_blank"
+                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
+                                <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
+                        <div class="flex-1">
+                            <p class="text-sm text-secondary mb-2">
+                                <span class="font-medium text-primary">Role</span>&nbsp; Service planning, backend development, deployment & operations
+                            </p>
+                            <div class="flex flex-col gap-2 mb-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">Problem</p>
+                                    <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>Hard to keep up with the volume of new AI papers published daily</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Wanted to build a fully automated service without paid servers or APIs</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
+                                    <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions Cron for weekday morning arXiv crawling — zero server cost</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Custom BeautifulSoup crawler (over RSS) to capture full abstracts for same-day papers only</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Open-source Google Pegasus for summarization; DeepL API for Korean translation — no paid LLM APIs</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Google Sheets + GAS for subscriber management and sign-up UI; GitHub Pages for full archive</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">Outcome</p>
+                                    <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>Delivers 5 LLM papers + 5 general AI papers daily, auto-summarized and translated — currently live</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Fully automated newsletter service with zero server or paid API costs</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Python</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">GitHub Actions</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">BeautifulSoup</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Pegasus</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">DeepL API</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Google Sheets</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">GAS</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="bg-gray-50 rounded-lg overflow-hidden transition-shadow hover:shadow-md">
-                    <div class="h-48 overflow-hidden">
-                        <img src="../contents/coursemath-thumbnail.png" alt="CosMath" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-primary mb-2">CosMath</h3>
-                        <p class="text-secondary mb-4">Elementary math AI courseware applying KSM and IRT theories. Provides a personalized learning experience through adaptive assessment and knowledge map visualization.</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-accent mb-2"><strong>Role:</strong> Frontend & Backend Development</p>
-                            <p class="text-sm text-accent"><strong>Tech:</strong> React, TypeScript</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://github.com/2shin0/pm7_math_chatbot" class="transition-colors" style="color: #F7BFA5;" onmouseover="this.style.color='#E5A689';" onmouseout="this.style.color='#F7BFA5';">
-                                <i class="fab fa-github mr-1"></i>GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </section>
@@ -598,71 +965,81 @@
     <!-- Lectures Section -->
     <section id="lectures" class="py-16 bg-white scroll-mt-24">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-10"><span class="relative inline-block highlight-accent">Lectures</span></h2>
+            <h2 class="text-3xl font-bold text-primary mb-10"><span class="relative inline-block highlight-accent">Teaching</span></h2>
 
-            <!-- Lecture Table -->
             <div class="overflow-x-auto rounded-xl border border-gray-200 mb-12 shadow-sm">
                 <table class="w-full lecture-table">
                     <thead>
                         <tr>
-                            <th>Target Audience</th>
+                            <th>Audience</th>
                             <th>Topic</th>
                             <th>Format</th>
-                            <th>Note</th>
+                            <th>Notes</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="font-medium text-primary">KDT PM Students</td>
-                            <td>AI, Machine Learning, Deep Learning, Personalized Learning Process</td>
+                            <td class="font-medium text-primary">KDT PM Bootcamp</td>
+                            <td>AI, Machine Learning, Deep Learning, Personalized Learning</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-orange-50 text-orange-600 border border-orange-100">Lecture</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td class="font-medium text-primary">KDT Mentoring</td>
-                            <td>Personalized Learning Courseware, Step-by-step Math Chatbot, SEL Chatbot Mentoring & Development</td>
+                            <td>Adaptive learning courseware, step-by-step math chatbot, SEL chatbot — mentoring & development</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-purple-50 text-purple-600 border border-purple-100">Mentoring</span></td>
                             <td></td>
                         </tr>
-
                         <tr>
-                            <td class="font-medium text-primary">Master's students in Educational Technology, SNU</td>
-                            <td>Implementation of Teacher Assistant Chatbot based on GraphDB/GraphRAG</td>
+                            <td class="font-medium text-primary">Seoul National University — Graduate students, Dept. of Educational Technology</td>
+                            <td>Building a teacher-assist chatbot with GraphDB & GraphRAG</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-blue-50 text-blue-600 border border-blue-100">Seminar</span></td>
                             <td>
-                                <button onclick="openPhotoModal('snu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
-                                    <i class="fas fa-image text-xs"></i> View Photo
-                                </button>
+                                <div class="flex flex-col gap-1">
+                                    <button onclick="openPhotoModal('snu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                        <i class="fas fa-image text-xs"></i> Photo
+                                    </button>
+                                    <a href="https://huggingface.co/spaces/0shin0/snu_workshop_space" target="_blank" class="text-xs flex items-center gap-1.5 hover:underline w-fit" style="color: #F7BFA5;">
+                                        <i class="fas fa-file-alt text-xs"></i> Slides
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-primary">Corporate Employees, KDT Trainees, External Participants</td>
-                            <td>Knowledge Tracing & Recommendation System EdTech Seminar</td>
+                            <td class="font-medium text-primary">Corporate staff, KDT participants & external attendees</td>
+                            <td>EdTech seminar on Knowledge Tracing & Recommendation Systems</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-blue-50 text-blue-600 border border-blue-100">Seminar</span></td>
                             <td>
-                                <button onclick="openPhotoModal('edtech-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
-                                    <i class="fas fa-image text-xs"></i> View Photo
-                                </button>
+                                <div class="flex flex-col gap-1">
+                                    <button onclick="openPhotoModal('edtech-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
+                                        <i class="fas fa-image text-xs"></i> Photo
+                                    </button>
+                                    <a href="https://youtu.be/B-14Ksjonvk?si=ruslFGh1NLSAzutu" target="_blank" class="text-xs flex items-center gap-1.5 hover:underline w-fit" style="color: #F7BFA5;">
+                                        <i class="fas fa-play text-xs"></i> Video
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="font-medium text-primary">Internal PMs, Jinju National University of Education Graduate Students</td>
-                            <td>Vibe Coding Workshop utilizing Google Apps Script & Gemini</td>
+                            <td class="font-medium text-primary">In-house PMs & Graduate students, Jinju National University of Education</td>
+                            <td>Vibe coding workshop using Google Apps Script & Gemini</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-green-50 text-green-600 border border-green-100">Workshop</span></td>
                             <td>
                                 <button onclick="openPhotoModal('cjeu-seminar')" class="text-xs flex items-center gap-1 hover:underline" style="color: #F7BFA5;">
-                                    <i class="fas fa-image text-xs"></i> View Photo
+                                    <i class="fas fa-image text-xs"></i> Photo
                                 </button>
                             </td>
                         </tr>
-                        
                         <tr>
                             <td class="font-medium text-primary">MetaCode Students</td>
-                            <td>6-hour course on AI Agents & Data Analysis (Generative AI, No-code Automation, Vibe Coding, Agent Development)</td>
+                            <td>6-hour AI course: Generative AI, no-code automation, vibe coding, agent development</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-orange-50 text-orange-600 border border-orange-100">Lecture</span></td>
-                            <td></td>
+                            <td>
+                                <a href="https://youtu.be/Z3DfXuEscb0?si=K5Tx0Nn81Ucwue3R" target="_blank" class="text-xs flex items-center gap-1.5 hover:underline w-fit" style="color: #F7BFA5;">
+                                    <i class="fas fa-play text-xs"></i> Video
+                                </a>
+                            </td>
                         </tr>
-
                         <tr>
                             <td class="font-medium text-primary">Kathmandu University, Nepal</td>
                             <td>AI Project Mentoring</td>
@@ -672,58 +1049,10 @@
                     </tbody>
                 </table>
             </div>
-
-            <!-- Lecture Samples -->
-            <h3 class="text-2xl font-semibold text-primary mb-6">Lecture Samples</h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://youtu.be/B-14Ksjonvk?si=ruslFGh1NLSAzutu" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="aspect-video overflow-hidden bg-gray-100">
-                        <img src="../contents/edtech-seminar-thumbnail.jpg" alt="EdTech Seminar" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-primary mb-2">EdTech Domain Expertise and Two Core Technologies</h3>
-                        <p class="text-secondary text-sm">Chunjae AI Education Center</p>
-                    </div>
-                </a>
-                <a href="https://youtu.be/fvwEqWyeYj0?si=vHA2HbNnpaddNIpH" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="aspect-video overflow-hidden bg-gray-100">
-                        <img src="../contents/mc-thumbnail.jpg" alt="No-code AI" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-primary mb-2">No-code AI Automation Tools</h3>
-                        <p class="text-secondary text-sm">MetaCode</p>
-                    </div>
-                </a>
-                <a href="https://youtu.be/Z3DfXuEscb0?si=K5Tx0Nn81Ucwue3R" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="aspect-video overflow-hidden bg-gray-100">
-                        <img src="../contents/agent-thumbnail.jpg" alt="AI Agent" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Concept and Principles of AI Agents</h3>
-                        <p class="text-secondary text-sm">MetaCode</p>
-                    </div>
-                </a>
-                <a href="https://youtu.be/l5Hv9a42Qbs?si=c3kJnfowPP7KtP6p" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <div class="aspect-video overflow-hidden bg-gray-100">
-                        <img src="../contents/da-thumbnail.jpg" alt="Data Analysis" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold text-primary mb-2">Data Analysis using Generative AI</h3>
-                        <p class="text-secondary text-sm">MetaCode</p>
-                    </div>
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <!-- <footer class="text-white py-8" style="background-color: #2d3748;">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2026 이신영 · Shin Young Lee. All rights reserved.</p>
-        </div>
-    </footer> -->
-
-    <!-- Award Detail Modal -->
+    <!-- Award Modal -->
     <div class="award-modal-overlay" id="awardModalOverlay" onclick="closeAwardModal(event)">
         <div class="award-modal" id="awardModalContent">
             <button onclick="closeAwardModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
@@ -733,13 +1062,13 @@
         </div>
     </div>
 
-    <!-- Lecture Photo Modal -->
-    <div class="photo-modal-overlay" id="photoModalOverlay" onclick="closePhotoModal(event)">
+    <!-- Photo Modal -->
+    <div class="photo-modal-overlay" id="photoModalOverlay">
         <div class="photo-modal">
             <button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300">
                 <i class="fas fa-times text-xl"></i>
             </button>
-            <img id="photoModalImg" src="" alt="Lecture Photo" class="w-full rounded-lg" />
+            <img id="photoModalImg" src="" alt="Seminar photo" class="w-full rounded-lg" />
             <p id="photoModalCaption" class="text-white text-center mt-3 text-sm"></p>
         </div>
     </div>
@@ -761,31 +1090,29 @@
             }
         });
 
-        // Award Modal Data
         const awardData = {
             award1: {
-                title: 'Excellence Award, 6th Educational Public Data Utilization Contest',
-                org: 'Korea Foundation for the Advancement of Science and Creativity · 2024.08',
-                description: 'Developed an AI support service for special education students using GPT Fine-tuning, Prompt Engineering, and RAG. Started by analyzing actual data from special education fields to define support needs per student and designing an appropriate structure.',
+                title: 'Excellence Award — 6th Education Public Data Utilization Contest',
+                org: 'Korea Foundation for the Advancement of Science & Creativity · Aug 2024',
+                description: 'Developed an AI support service for students with special educational needs using GPT fine-tuning, prompt engineering, and RAG. Started by analyzing real special education field data to define student-level support needs and designing a fitting system architecture.',
                 tags: ['GPT Fine-tuning', 'Prompt Engineering', 'RAG', 'Special Education'],
                 github: null,
                 link: null
             }
         };
 
-        // Lecture Photo Data - Replace with actual photo paths
         const photoData = {
             "cjeu-seminar": {
                 src: '../contents/cjeu-seminar.jpg',
-                caption: 'cjeu seminar'
+                caption: 'Vibe Coding Workshop'
             },
             "edtech-seminar": {
                 src: '../contents/edtech-seminar.jpg',
-                caption: 'edtech seminar'
+                caption: 'EdTech Seminar'
             },
             "snu-seminar": {
                 src: '../contents/snu-seminar.jpg',
-                caption: 'snu seminar'
+                caption: 'SNU Seminar'
             }
         };
 
@@ -825,17 +1152,14 @@
             document.getElementById('photoModalOverlay').classList.add('active');
         }
 
-        function closePhotoModal(event) {
-            if (!event || event.target === document.getElementById('photoModalOverlay')) {
-                document.getElementById('photoModalOverlay').classList.remove('active');
-            }
+        function closePhotoModal() {
+            document.getElementById('photoModalOverlay').classList.remove('active');
         }
 
-        // Close modal with ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                closeAwardModal();
-                closePhotoModal();
+                document.getElementById('awardModalOverlay').classList.remove('active');
+                document.getElementById('photoModalOverlay').classList.remove('active');
             }
         });
     </script>
