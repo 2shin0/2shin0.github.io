@@ -218,7 +218,7 @@
                     <p class="text-lg text-secondary mb-4 leading-relaxed font-medium">기술과 사람의 간극을 좁히는 Bridge Builder</p>
                     <p class="text-base text-secondary leading-relaxed mb-8">
                         교육공학이라는 인문학적 토대 위에 AI 개발이라는 기술적 도구를 더해<br>
-                        유저의 경험과 조직의 성장을 고려한 최적의 솔루션을 고민합니다.<br>
+                        유저의 만족스러운 경험과 조직의 성장을 고려한 최적의 솔루션을 고민합니다.<br>
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="https://www.linkedin.com/in/2shin0" class="px-6 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all flex items-center">
@@ -1019,16 +1019,16 @@
                                 <div>
                                     <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">문제</p>
                                     <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>매일 쏟아지는 AI 논문을 효율적으로 팔로업하기 어려움</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>서버·유료 API 없이 자동화 서비스를 구축하고자 함</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>매일 업데이트 되는 수많은 AI 논문을 효율적으로 팔로업하기 어려움.</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>서버·유료 API 없이 자동화 서비스를 구축하고자 함.</span></li>
                                     </ul>
                                 </div>
                                 <div>
                                     <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">방법</p>
                                     <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions Cron으로 평일 오전 arXiv 크롤링 자동화 — 서버비 0원</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions Cron으로 평일 오전 arXiv 크롤링 자동화</span></li>
                                         <li class="flex gap-1"><span>•</span><span>BeautifulSoup으로 당일 논문만 정확히 수집, RSS 대신 직접 크롤러 구현으로 전체 초록 확보</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Google Pegasus(오픈소스)로 요약, DeepL API로 한국어 번역 — 유료 LLM API 미사용</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Google Pegasus(오픈소스)로 요약, DeepL API로 한국어 번역</span></li>
                                         <li class="flex gap-1"><span>•</span><span>Google Sheets·GAS로 구독자 관리 및 신청 UI 구축, GitHub Pages로 전체 아카이브 제공</span></li>
                                     </ul>
                                 </div>
@@ -1036,7 +1036,7 @@
                                     <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">결과</p>
                                     <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
                                         <li class="flex gap-1"><span>•</span><span>매일 오전 LLM 논문 5건 + 일반 AI 논문 5건 자동 요약·번역 메일 발송 운영 중</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>서버·유료 API 비용 없이 완전 자동화 뉴스레터 서비스 구축</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>유료 서버·API 비용 없이 완전 자동화 뉴스레터 서비스 구축</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1212,7 +1212,7 @@
     </div>
 
     <!-- 강의 사진 모달 -->
-    <div class="photo-modal-overlay" id="photoModalOverlay" onclick="closePhotoModal(event)">
+    <div class="photo-modal-overlay" id="photoModalOverlay">
         <div class="photo-modal">
             <button onclick="closePhotoModal()" class="absolute -top-10 right-0 text-white hover:text-gray-300">
                 <i class="fas fa-times text-xl"></i>
@@ -1304,10 +1304,7 @@
         }
 
         function closePhotoModal(event) {
-            // 이벤트가 없거나(X 버튼 클릭 등), 클릭한 대상이 배경(Overlay)일 때만 닫기
-            if (!event || event.target === document.getElementById('photoModalOverlay')) {
-                document.getElementById('photoModalOverlay').classList.remove('active');
-            }
+            document.getElementById('photoModalOverlay').classList.remove('active');
         }
 
         // ESC 키로 모달 닫기
