@@ -166,10 +166,10 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="block py-2 text-secondary hover:text-primary">Home</a>
                     <a href="#experience" class="block py-2 text-secondary hover:text-primary">Experience</a>
-                    <a href="#tech" class="block py-2 text-secondary hover:text-primary">Skills</a>
+                    <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
                     <a href="#certifications" class="block py-2 text-secondary hover:text-primary">Certifications</a>
                     <a href="#awards" class="block py-2 text-secondary hover:text-primary">Awards</a>
-                    <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
+                    <a href="#tech" class="block py-2 text-secondary hover:text-primary">Skills</a>
                     <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Teaching</a>
                     <div class="lang-toggle">
                         <a href="../">KO</a>
@@ -186,10 +186,10 @@
             <div class="px-4 py-2 space-y-2">
                 <a href="#home" class="block py-2 text-secondary hover:text-primary">Home</a>
                 <a href="#experience" class="block py-2 text-secondary hover:text-primary">Experience</a>
-                <a href="#tech" class="block py-2 text-secondary hover:text-primary">Skills</a>
+                <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
                 <a href="#certifications" class="block py-2 text-secondary hover:text-primary">Certifications</a>
                 <a href="#awards" class="block py-2 text-secondary hover:text-primary">Awards</a>
-                <a href="#projects" class="block py-2 text-secondary hover:text-primary">Projects</a>
+                <a href="#tech" class="block py-2 text-secondary hover:text-primary">Skills</a>
                 <a href="#lectures" class="block py-2 text-secondary hover:text-primary">Teaching</a>
                 <div class="py-2 border-t border-gray-100">
                     <div class="lang-toggle">
@@ -478,6 +478,178 @@
             </div>
         </div>
     </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">Projects</span>
+            </h2>
+            <div class="space-y-3">
+
+                <!-- LLMxiv -->
+                <div class="bg-white rounded-lg border border-gray-100 p-4">
+                    <div class="flex items-center justify-between mb-1">
+                        <h5 class="font-semibold text-primary text-base">LLMxiv</h5>
+                        <span class="text-sm text-secondary">Jun 2025 – Sep 2025</span>
+                    </div>
+                    <p class="text-sm text-secondary mb-3">Automated newsletter service that daily crawls, summarizes, and translates AI papers from arXiv <span class="px-1.5 py-0.5 rounded-full text-xs bg-green-50 text-green-700 border border-green-100">Live</span></p>
+                    <div class="flex gap-4">
+                        <div class="shrink-0 flex flex-col gap-2">
+                            <img src="../contents/LLMxiv.png" alt="LLMxiv" class="w-80 h-52 object-cover rounded">
+                            <a href="https://github.com/2shin0/arxiv-ai-mailing" target="_blank"
+                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm text-secondary mb-2">
+                                <span class="font-medium text-primary">Role</span>&nbsp; Service planning, backend development, deployment & operations
+                            </p>
+                            <div class="flex flex-col gap-2 mb-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">Problem</p>
+                                    <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>Hard to keep up with the volume of new AI papers published daily</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Wanted to build a fully automated service without paid servers or APIs</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
+                                    <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions Cron for weekday morning arXiv crawling — zero server cost</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Custom BeautifulSoup crawler (over RSS) to capture full abstracts for same-day papers only</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Open-source Google Pegasus for summarization; DeepL API for Korean translation — no paid LLM APIs</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Google Sheets + GAS for subscriber management and sign-up UI; GitHub Pages for full archive</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">Outcome</p>
+                                    <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>Delivers 5 LLM papers + 5 general AI papers daily, auto-summarized and translated — currently live</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Fully automated newsletter service with zero server or paid API costs</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Python</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">GitHub Actions</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">BeautifulSoup</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Pegasus</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">DeepL API</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Google Sheets</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">GAS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">Certifications</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
+                    <i class="fas fa-award text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">Big Data Analytics Engineer</h4>
+                        <p class="text-secondary text-sm">Korea Data Agency · Jul 2025</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
+                    <i class="fas fa-chalkboard-teacher text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">NCS Vocational Trainer<br>(IT Development, AI, IT Strategy & Planning)</h4>
+                        <p class="text-secondary text-sm">Ministry of Employment and Labor · Jul 2025</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
+                    <i class="fab fa-aws text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">AWS Certified AI Practitioner</h4>
+                        <p class="text-secondary text-sm">AWS · Feb 2025</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
+                    <i class="fas fa-database text-2xl" style="color: #F7BFA5;"></i>
+                    <div>
+                        <h4 class="font-semibold text-primary">SQL Developer (SQLD)</h4>
+                        <p class="text-secondary text-sm">Korea Data Agency · Jun 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-16 bg-white scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-primary mb-12">
+                <span class="relative inline-block highlight-accent">수상</span>
+            </h2>
+
+            <div class="space-y-3">
+
+                <!-- 제6회 교육 공공데이터 활용 공모전 -->
+                <div class="bg-white rounded-lg border border-gray-100 p-4">
+                    <div class="flex items-center justify-between mb-1">
+                        <h5 class="font-semibold text-primary text-base">Excellence Award — 6th Education Public Data Utilization Contest</h5>
+                        <span class="text-sm text-secondary">2024.08</span>
+                    </div>
+                    <p class="text-sm text-secondary mb-3">Korea Foundation for Science and Creativity</p>
+                    <p class="text-sm text-secondary mb-3">AI support service for students with special educational needs</p>
+                    <div class="flex gap-4">
+
+                        <!-- 이미지 + 링크 -->
+                        <div class="shrink-0 flex flex-col gap-2">
+                            <img src="contents/thisable.png" alt="공모전" class="w-80 h-52 object-cover rounded">
+                            <a href="https://github.com/2shin0/ThisAble_service" target="_blank"
+                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+
+                        <div class="flex-1">
+                            <p class="text-sm text-secondary mb-2">
+                                <span class="font-medium text-primary">Role</span>&nbsp; Service planning, data analysis, GPT fine-tuning & chatbot development
+                            </p>
+                            <div class="flex flex-col gap-2 mb-3">
+                                <div>
+                                    <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">Problem</p>
+                                    <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>The number of students requiring special education is rising sharply, while a shortage of trained teachers limits the support each student can receive</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Sentiment analysis of YouTube comments revealed that 62% of responses about inclusive education were negative, indicating a lack of social awareness</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>No dedicated tool existed to provide individualized support for students with developmental disabilities who struggle with social skills such as emotional regulation and communication</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
+                                    <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>Fine-tuned GPT-3.5-Turbo on AI-Hub's Korean multi-session conversation corpus to build "Sangdami," a chatbot capable of empathetic counseling dialogue</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Designed system prompts to assign each chatbot a role tailored to the individual student's profile and behavioral characteristics</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Built a community feature open to students, families, and teachers — covering communication, information sharing, second-hand trading, and career resources</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Designed as an integrated platform supporting daily life across scheduling, journaling, games, and learning</span></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">Outcome</p>
+                                    <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
+                                        <li class="flex gap-1"><span>•</span><span>Expected to improve social communication skills in students with special educational needs and reduce negative perceptions of inclusive education</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">GPT Fine-tuning</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Prompt Engineering</span>
+                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">RAG</span>
+                            </div>
+                        </div>
 
     <!-- Tech Section -->
     <section id="tech" class="py-16 bg-white scroll-mt-24">
@@ -814,146 +986,6 @@
                                 </div>
                             </div>
                             <p class="text-xs text-secondary leading-relaxed">EC2-based API server deployment and operations; S3 static file management</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-16 bg-white scroll-mt-24 border-t border-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12">
-                <span class="relative inline-block highlight-accent">Certifications</span>
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
-                    <i class="fas fa-award text-2xl" style="color: #F7BFA5;"></i>
-                    <div>
-                        <h4 class="font-semibold text-primary">Big Data Analytics Engineer</h4>
-                        <p class="text-secondary text-sm">Korea Data Agency · Jul 2025</p>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
-                    <i class="fas fa-chalkboard-teacher text-2xl" style="color: #F7BFA5;"></i>
-                    <div>
-                        <h4 class="font-semibold text-primary">NCS Vocational Trainer<br>(IT Development, AI, IT Strategy & Planning)</h4>
-                        <p class="text-secondary text-sm">Ministry of Employment and Labor · Jul 2025</p>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
-                    <i class="fab fa-aws text-2xl" style="color: #F7BFA5;"></i>
-                    <div>
-                        <h4 class="font-semibold text-primary">AWS Certified AI Practitioner</h4>
-                        <p class="text-secondary text-sm">AWS · Feb 2025</p>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-5 rounded-lg flex items-center gap-4">
-                    <i class="fas fa-database text-2xl" style="color: #F7BFA5;"></i>
-                    <div>
-                        <h4 class="font-semibold text-primary">SQL Developer (SQLD)</h4>
-                        <p class="text-secondary text-sm">Korea Data Agency · Jun 2024</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Awards Section -->
-    <section id="awards" class="py-16 bg-white scroll-mt-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12">
-                <span class="relative inline-block highlight-accent">Awards</span>
-            </h2>
-            <div class="grid grid-cols-1 gap-6">
-                <div class="bg-gray-50 rounded-xl border border-gray-100 p-6 flex flex-col md:flex-row items-center gap-6">
-                    <div class="hidden md:flex w-20 h-20 items-center justify-center rounded-full shrink-0" style="background: linear-gradient(135deg, #fff5f0 0%, #ffe0d1 100%);">
-                        <i class="fas fa-trophy text-3xl" style="color: #F7BFA5;"></i>
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
-                            <h4 class="text-xl font-bold text-primary">Excellence Award — 6th Education Public Data Utilization Contest</h4>
-                            <span class="text-xs font-medium px-2 py-1 rounded bg-orange-50 text-orange-400 border border-orange-100 w-fit">Aug 2024</span>
-                        </div>
-                        <p class="text-secondary text-sm font-medium mb-2">Korea Foundation for the Advancement of Science & Creativity (KOFAC)</p>
-                        <p class="text-secondary text-sm leading-relaxed">
-                            Developed an AI support service for students with special educational needs using GPT fine-tuning, prompt engineering, and RAG
-                        </p>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="https://github.com/2shin0/ThisAble_service" target="_blank"
-                        class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white scroll-mt-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-primary mb-12">
-                <span class="relative inline-block highlight-accent">Projects</span>
-            </h2>
-            <div class="space-y-3">
-
-                <!-- LLMxiv -->
-                <div class="bg-white rounded-lg border border-gray-100 p-4">
-                    <div class="flex items-center justify-between mb-1">
-                        <h5 class="font-semibold text-primary text-base">LLMxiv</h5>
-                        <span class="text-sm text-secondary">Jun 2025 – Sep 2025</span>
-                    </div>
-                    <p class="text-sm text-secondary mb-3">Automated newsletter service that daily crawls, summarizes, and translates AI papers from arXiv <span class="px-1.5 py-0.5 rounded-full text-xs bg-green-50 text-green-700 border border-green-100">Live</span></p>
-                    <div class="flex gap-4">
-                        <div class="shrink-0 flex flex-col gap-2">
-                            <img src="../contents/LLMxiv.png" alt="LLMxiv" class="w-80 h-52 object-cover rounded">
-                            <a href="https://github.com/2shin0/arxiv-ai-mailing" target="_blank"
-                            class="text-sm px-4 py-2 rounded-lg border-2 border-[#F7BFA5] text-[#F7BFA5] hover:bg-[#F7BFA5] hover:text-white transition-all inline-flex items-center gap-1.5 w-fit">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-sm text-secondary mb-2">
-                                <span class="font-medium text-primary">Role</span>&nbsp; Service planning, backend development, deployment & operations
-                            </p>
-                            <div class="flex flex-col gap-2 mb-3">
-                                <div>
-                                    <p class="text-sm font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-t">Problem</p>
-                                    <ul class="text-sm text-secondary bg-red-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>Hard to keep up with the volume of new AI papers published daily</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Wanted to build a fully automated service without paid servers or APIs</span></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
-                                    <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions Cron for weekday morning arXiv crawling — zero server cost</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Custom BeautifulSoup crawler (over RSS) to capture full abstracts for same-day papers only</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Open-source Google Pegasus for summarization; DeepL API for Korean translation — no paid LLM APIs</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Google Sheets + GAS for subscriber management and sign-up UI; GitHub Pages for full archive</span></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">Outcome</p>
-                                    <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>Delivers 5 LLM papers + 5 general AI papers daily, auto-summarized and translated — currently live</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Fully automated newsletter service with zero server or paid API costs</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-1">
-                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Python</span>
-                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">GitHub Actions</span>
-                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">BeautifulSoup</span>
-                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Pegasus</span>
-                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">DeepL API</span>
-                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">Google Sheets</span>
-                                <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 text-xs">GAS</span>
-                            </div>
                         </div>
                     </div>
                 </div>
