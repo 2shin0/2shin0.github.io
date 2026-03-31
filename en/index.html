@@ -348,7 +348,7 @@
                                                 <div>
                                                     <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
                                                     <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                                        <li class="flex gap-1"><span>•</span><span>Designed and implemented IRT- and CAT-based adaptive assessment to dynamically serve questions matched to each student's level</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>Designed real-time difficulty estimation and next-item recommendation logic based on student response data (IRT-based ability estimation + CAT-based personalized recommendation)</span></li>
                                                         <li class="flex gap-1"><span>•</span><span>Visualized prerequisite and follow-up concept relationships as a knowledge map, giving students a clear view of where they are and what to study next</span></li>
                                                     </ul>
                                                 </div>
@@ -517,9 +517,10 @@
                                 <div>
                                     <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">Approach</p>
                                     <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions Cron for weekday morning arXiv crawling — zero server cost</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Custom BeautifulSoup crawler (over RSS) to capture full abstracts for same-day papers only</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>Open-source Google Pegasus for summarization; DeepL API for Korean translation — no paid LLM APIs</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Designed and automated an end-to-end data pipeline — unstructured text (paper abstracts) through collection, refinement, summarization, translation, and delivery</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Defined collection schema (same-day papers, category filters) and switched from RSS to a custom crawler based on source limitations to secure full abstracts</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions cron-based scheduling for zero-maintenance pipeline operation — no server cost</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>Open-source Google Pegasus for summarization; DeepL API for Korean translation</span></li>
                                         <li class="flex gap-1"><span>•</span><span>Google Sheets + GAS for subscriber management and sign-up UI; GitHub Pages for full archive</span></li>
                                     </ul>
                                 </div>
@@ -789,11 +790,11 @@
                                     <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
                                 </div>
                             </div>
-                            <p class="text-xs text-secondary leading-relaxed">Applied open-source Transformer models for similarity ensemble; benchmarked and compared multiple models</p>
+                            <p class="text-xs text-secondary leading-relaxed">Open-source model selection, application, and performance comparison; handwriting and image recognition model development</p>
                         </div>
                         <div class="border-t border-gray-100 pt-4">
                             <div class="flex items-center justify-between mb-1">
-                                <span class="text-sm font-medium text-primary">RAG</span>
+                                <span class="text-sm font-medium text-primary">LLM</span>
                                 <div class="flex gap-0.5">
                                     <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
                                     <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
@@ -802,20 +803,7 @@
                                     <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
                                 </div>
                             </div>
-                            <p class="text-xs text-secondary leading-relaxed">Built FAISS-based math chatbot and Neo4j-integrated GraphRAG pipeline in production contexts</p>
-                        </div>
-                        <div class="border-t border-gray-100 pt-4">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-sm font-medium text-primary">LLM Fine-tuning</span>
-                                <div class="flex gap-0.5">
-                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
-                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
-                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
-                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
-                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
-                                </div>
-                            </div>
-                            <p class="text-xs text-secondary leading-relaxed">Constructed training datasets and fine-tuned GPT; designed and ran blind evaluation of Claude, Gemini, GPT, and DeepSeek</p>
+                            <p class="text-xs text-secondary leading-relaxed">Training data construction for fine-tuning; local LLM serving and inference endpoint integration via Ollama; fine-tuning, RAG, and prompt engineering design and refinement; multi-LLM benchmarking</p>
                         </div>
                         <div class="border-t border-gray-100 pt-4">
                             <div class="flex items-center justify-between mb-1">
@@ -824,11 +812,11 @@
                                     <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
                                     <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
                                     <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
-                                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: #F7BFA5;"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
                                     <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
                                 </div>
                             </div>
-                            <p class="text-xs text-secondary leading-relaxed">Designed and implemented IRT/CAT-based adaptive assessment logic; developed a DKT-based courseware PoC</p>
+                            <p class="text-xs text-secondary leading-relaxed">Adaptive assessment logic design and implementation based on IRT and CAT</p>
                         </div>
                     </div>
                 </div>

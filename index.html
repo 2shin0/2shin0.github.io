@@ -416,7 +416,7 @@
                                                 <div>
                                                     <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">방법</p>
                                                     <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                                        <li class="flex gap-1"><span>•</span><span>IRT·CAT 기반 적응형 평가를 설계 및 구현하여 학생 수준에 맞는 문항을 동적으로 출제</span></li>
+                                                        <li class="flex gap-1"><span>•</span><span>학생의 문항 응답 데이터를 기반으로 실시간 난이도 추정 및 다음 문항 추천 로직 설계(IRT 기반 능력치 추정 + CAT 기반 개인화 추천)</span></li>
                                                         <li class="flex gap-1"><span>•</span><span>개념 간 선수·후속 학습 관계를 지식 맵으로 시각화하여 현재 위치와 다음 학습 경로를 직관적으로 제시</span></li>
                                                     </ul>
                                                 </div>
@@ -622,8 +622,9 @@
                                 <div>
                                     <p class="text-sm font-semibold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-t">방법</p>
                                     <ul class="text-sm text-secondary bg-blue-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions Cron으로 평일 오전 arXiv 크롤링 자동화</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>BeautifulSoup으로 당일 논문만 정확히 수집, RSS 대신 직접 크롤러 구현으로 전체 초록 확보</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>비정형 텍스트(논문 초록) 수집-정제-요약-번역-발송으로 이어지는 엔드투엔드 데이터 파이프라인 설계 및 자동화</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>수집 대상 스키마(당일 논문, 카테고리 필터)를 정의하고 소스 특성(RSS 한계)에 따라 직접 크롤러로 전환하는 데이터 수집 전략 수립</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>GitHub Actions 기반 스케줄링으로 유지보수 비용 없는 파이프라인 운영</span></li>
                                         <li class="flex gap-1"><span>•</span><span>Google Pegasus(오픈소스)로 요약, DeepL API로 한국어 번역</span></li>
                                         <li class="flex gap-1"><span>•</span><span>Google Sheets·Google Apps Script로 구독자 관리 및 신청 UI 구축, GitHub Pages로 전체 아카이브 제공</span></li>
                                     </ul>
@@ -631,8 +632,7 @@
                                 <div>
                                     <p class="text-sm font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-t">결과</p>
                                     <ul class="text-sm text-secondary bg-green-50 px-2 py-1.5 rounded-b leading-relaxed space-y-0.5">
-                                        <li class="flex gap-1"><span>•</span><span>매일 오전 LLM 논문 5건 + 일반 AI 논문 5건 자동 요약·번역 메일 발송 운영 중</span></li>
-                                        <li class="flex gap-1"><span>•</span><span>유료 서버·API 비용 없이 완전 자동화 뉴스레터 서비스 구축</span></li>
+                                        <li class="flex gap-1"><span>•</span><span>비용 0원의 완전 자동화 파이프라인으로 데이터 파이프라인 기획·구축·운영 전체 사이클 경험</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -912,7 +912,7 @@
                                     <span class="w-2.5 h-2.5 rounded-full bg-gray-200"></span>
                                 </div>
                             </div>
-                            <p class="text-xs text-secondary leading-relaxed">파인튜닝용 학습 데이터 구축, 파인튜닝·RAG·프롬프트 엔지니어링 설계 및 고도화, 멀티 LLM 벤치마킹 경험</p>
+                            <p class="text-xs text-secondary leading-relaxed">파인튜닝용 학습 데이터 구축, Ollama 기반 오픈소스 모델 로컬 서빙 및 추론 엔드포인트 연동, 파인튜닝·RAG·프롬프트 엔지니어링 설계 및 고도화, 멀티 LLM 벤치마킹 경험</p>
                         </div>
                         <div class="border-t border-gray-100 pt-4">
                             <div class="flex items-center justify-between mb-1">
@@ -1178,7 +1178,7 @@
 
                         <tr>
                             <td class="font-medium text-primary">네팔 카트만두대학</td>
-                            <td>AI 프로젝트 멘토링</td>
+                            <td>AI 프로젝트 멘토링 및 LLM 서빙 등의 환경 구축</td>
                             <td><span class="px-2 py-0.5 rounded-full text-xs bg-purple-50 text-purple-600 border border-purple-100">멘토링</span></td>
                             <td></td>
                         </tr>
